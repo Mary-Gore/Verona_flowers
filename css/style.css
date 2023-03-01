@@ -36,20 +36,13 @@ section h1 {
   background-size: cover;
   color: #fff;
   height: 650px;
+  padding: 40px 0 30px;
 }
 
-.main-container,
-.blocks-container {
+.container {
   max-width: 1366px;
   margin: 0 auto;
-}
-
-.main-container {
-  padding: 40px 30px 0 30px;
-}
-
-.blocks-container {
-  padding: 120px 30px 0 30px;
+  padding: 0 30px 0 30px;
 }
 
 .header-wrapper {
@@ -202,6 +195,9 @@ section h1 {
   height: 18px;
 }
 
+.catalog {
+  padding-top: 120px;
+}
 
 .catalog h1 {
   margin-bottom: 0;
@@ -295,6 +291,7 @@ section h1 {
   color: #F5749B;
   font-weight: bold;
 }
+
 .calc-popup h2 {
   font-size: 18px;
   margin-bottom: 20px;
@@ -366,47 +363,12 @@ section h1 {
   margin-bottom: 8px;
 }
 
-.review-item {
-  display: flex;
-}
-
-.reviews img {
-  width: 400px;
-}
-
-.review-text-wrapper p:first-child {
-  max-width: 400px;
-}
-
-.review-text-wrapper.left {
-  margin-left: 30px;
-}
-
-.review-text-wrapper.right {
-  margin-right: 30px;
-}
-
-.review-text-wrapper p:last-child {
-  margin-top: 15px;
-  font-weight: bold;
-}
-
-.reviews-wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.review-item:first-child {
-  margin-bottom: 80px;
-}
-
 .contacts h1 {
   margin-bottom: 60px;
 }
 
-.blocks-container.contacts {
-  padding: 120px 30px 120px 30px;
+.contacts {
+  padding-top: 120px;
 }
 
 .contact-block {
@@ -481,8 +443,8 @@ footer {
   color: #4A4F57;
 }
 
-footer .blocks-container {
-  padding: 50px 30px 40px 30px;
+footer {
+  padding: 50px 0 40px;
 }
 
 .head-footer {

@@ -35,35 +35,35 @@ const countCatalog = () => {
       spanCalc.textContent = count;
     });
 
-    btnBuy.addEventListener('click', () => {
-      calcWrapper.style.cssText = `
-    display:flex;
-    flex-direction: column;
-  `;
+    /*  btnBuy.addEventListener('click', () => {
+        calcWrapper.style.cssText = `
+      display:flex;
+      flex-direction: column;
+    `;
+  
+        total.textContent = `${parseFloat(sum.textContent)} ₽`;
+  
+        checkboxes.forEach(checkbox => {
+          checkbox.addEventListener('change', () => {
+            if (checkbox.checked) {
+              total.textContent = `${parseFloat(total.textContent) + parseFloat(checkbox.value)} ₽`;
+            } else {
+              total.textContent = `${parseFloat(total.textContent) - parseFloat(checkbox.value)} ₽`;
+            }
+          });
+        });
+  
+      }); */
 
-      //total.textContent = `${parseFloat(sum.textContent)} ₽`;
-
-      checkboxes.forEach(checkbox => {
-        checkbox.addEventListener('change', () => {
+    /*  btnClose.addEventListener('click', () => {
+        calcWrapper.style.display = 'none';
+  
+        checkboxes.forEach(checkbox => {
           if (checkbox.checked) {
-            total.textContent = `${parseFloat(total.textContent) + parseFloat(checkbox.value)} ₽`;
-          } else {
-            total.textContent = `${parseFloat(total.textContent) - parseFloat(checkbox.value)} ₽`;
+            checkbox.checked = false;
           }
         });
-      });
-
-    });
-
-  /*  btnClose.addEventListener('click', () => {
-      calcWrapper.style.display = 'none';
-
-      checkboxes.forEach(checkbox => {
-        if (checkbox.checked) {
-          checkbox.checked = false;
-        }
-      });
-    }); */
+      }); */
 
   });
 
