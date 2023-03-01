@@ -99,16 +99,17 @@ section h1 {
   font-size: 14px;
 }
 
+.phone-wrapper a {
+  text-decoration: none;
+  color: #fff;
+}
+
 .icon-phone {
   fill: none;
   stroke: #fff;
   width: 20px;
   height: 20px;
   margin-right: 12px;
-}
-
-.icon-phone:hover {
-  stroke: #fcfc6f;
 }
 
 .main h1 {
@@ -156,11 +157,9 @@ section h1 {
   color: #fcfc6f;
 }
 
-.stroke-btn:hover {
-  border: 2px solid #FCFC5B;
+.main .stroke-btn:hover {
   background: #FCFC5B;
   color: #393E46;
-  ;
 }
 
 .main-contacts {
@@ -368,7 +367,7 @@ section h1 {
 }
 
 .contacts {
-  padding-top: 120px;
+  padding: 120px 0 120px;
 }
 
 .contact-block {
