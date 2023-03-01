@@ -7,8 +7,8 @@ const countCatalog = () => {
     const plusBtn = countItem.querySelector('.plus-btn'),
       minusBtn = countItem.querySelector('.minus-btn'),
       spanCalc = countItem.querySelector('.btns-calc-wrapper span'),
-      sum = countItem.querySelector('.wrapper-info span'),
-      startCalcValue = parseFloat(sum.textContent),
+      price = countItem.querySelector('.wrapper-info span'),
+      startPrice = parseFloat(price.textContent),
       btnBuy = countItem.querySelector('.btns-wrapper > button');
 
 
@@ -23,13 +23,13 @@ const countCatalog = () => {
     plusBtn.addEventListener('click', () => {
       count++;
       spanCalc.textContent = count;
-      sum.textContent = `${(startCalcValue * count)} ₽`;
+      price.textContent = `${startPrice * count} ₽`;
     });
 
     minusBtn.addEventListener('click', () => {
       if (count > 1) {
         count--;
-        sum.textContent = `${parseFloat(sum.textContent) - startCalcValue} ₽`;
+        price.textContent = `${parseFloat(price.textContent) - startPrice} ₽`;
       }
 
       spanCalc.textContent = count;
@@ -41,7 +41,7 @@ const countCatalog = () => {
       flex-direction: column;
     `;
   
-        total.textContent = `${parseFloat(sum.textContent)} ₽`;
+        total.textContent = `${parseFloat(price.textContent)} ₽`;
   
         checkboxes.forEach(checkbox => {
           checkbox.addEventListener('change', () => {
