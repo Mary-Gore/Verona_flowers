@@ -194,6 +194,30 @@ section h1 {
   height: 18px;
 }
 
+.cart-icon-wrapper {
+  display: flex;
+  margin-left: auto;
+}
+
+.cart-icon-wrapper img {
+  width: 26px;
+  height: 26px;
+}
+
+.cart-count-span {
+  width: 22px;
+  height: 22px;
+  background-color: #fff;
+  color: #393E46;
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 8px;
+  font-weight: bold;
+  font-size: 10px;
+}
+
 .catalog {
   padding-top: 120px;
 }
