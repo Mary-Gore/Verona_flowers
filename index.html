@@ -73,30 +73,31 @@
     <div class="container">
       <h1>Каталог</h1>
       <div class="catalog-wrapper">
-        <div class="catalog-item">
-          <div class="calc-popup">
-            <div class="wrapper-header">
-              <h2>Хотите добавить?</h2>
-              <div class="wrapper-close">
-                <svg class="icon-close">
-                  <use xlink:href="icons/icons.svg#iconCross"></use>
-                </svg>
-              </div>
+        <div class="overlay" data-closed></div>
+        <div id="calc-popup" class="popup calc-popup popup-fade">
+          <div class="wrapper-header">
+            <h2>Хотите добавить?</h2>
+            <div class="wrapper-close">
+              <svg class="icon-close" data-closed>
+                <use xlink:href="icons/icons.svg#iconCross"></use>
+              </svg>
             </div>
-            <form action="#" class="calc-form">
-              <input type="checkbox" value="50" id="postcard">
-              <label for="postcard">Открытку (50 р.)</label>
-              <input type="checkbox" value="200" id="toy">
-              <label for="toy">Мягкую игрушку (200 р.)</label>
-              <input type="checkbox" value="100" id="ballon">
-              <label for="ballon">Воздушный шарик (100 р.)</label>
-              <div class="total">
-                <p>Стоимость: </p>
-                <span></span>
-              </div>
-              <button type="submit" class="btn yellow-btn">В корзину</button>
-            </form>
           </div>
+          <form action="#" class="calc-form">
+            <input type="checkbox" value="50" id="postcard">
+            <label for="postcard">Открытку (50 р.)</label>
+            <input type="checkbox" value="200" id="toy">
+            <label for="toy">Мягкую игрушку (200 р.)</label>
+            <input type="checkbox" value="100" id="ballon">
+            <label for="ballon">Воздушный шарик (100 р.)</label>
+            <div class="total">
+              <p>Стоимость: </p>
+              <span></span>
+            </div>
+            <button type="submit" class="btn yellow-btn">В корзину</button>
+          </form>
+        </div>
+        <div class="catalog-item">
           <img src="images/imageCatalog1.jpg" alt="image 1">
           <div class="wrapper-info">
             <p>Артикул: 01312615</p>
@@ -104,7 +105,7 @@
           </div>
 
           <div class="btns-wrapper">
-            <button class="btn pink-btn">Купить</button>
+            <button class="btn pink-btn" data-type="simple" data-simple-popup="calc-popup">Купить</button>
             <div class="btns-calc-wrapper">
               <button class="minus-btn">-</button>
               <span>1</span>
@@ -119,7 +120,7 @@
             <span>2000 ₽</span>
           </div>
           <div class="btns-wrapper">
-            <button class="btn pink-btn">Купить</button>
+            <button class="btn pink-btn" data-type="simple" data-simple-popup="calc-popup">Купить</button>
             <div class="btns-calc-wrapper">
               <button class="minus-btn">-</button>
               <span>1</span>
@@ -128,36 +129,13 @@
           </div>
         </div>
         <div class="catalog-item">
-          <div class="calc-popup">
-            <div class="wrapper-header">
-              <h2>Хотите добавить?</h2>
-              <div class="wrapper-close">
-                <svg class="icon-close">
-                  <use xlink:href="icons/icons.svg#iconCross"></use>
-                </svg>
-              </div>
-            </div>
-            <form action="#" class="calc-form">
-              <input type="checkbox" value="50" id="postcard">
-              <label for="postcard">Открытку (50 р.)</label>
-              <input type="checkbox" value="200" id="toy">
-              <label for="toy">Мягкую игрушку (200 р.)</label>
-              <input type="checkbox" value="100" id="ballon">
-              <label for="ballon">Воздушный шарик (100 р.)</label>
-              <div class="total">
-                <p>Стоимость: </p>
-                <span></span>
-              </div>
-              <button type="submit" class="btn yellow-btn">В корзину</button>
-            </form>
-          </div>
           <img src="images/imageCatalog3.jpg" alt="image 3">
           <div class="wrapper-info">
             <p>Артикул: 01312617</p>
             <span>800 ₽</span>
           </div>
           <div class="btns-wrapper">
-            <button class="btn pink-btn">Купить</button>
+            <button class="btn pink-btn" data-type="simple" data-simple-popup="calc-popup">Купить</button>
             <div class="btns-calc-wrapper">
               <button class="minus-btn">-</button>
               <span>1</span>
@@ -172,7 +150,7 @@
             <span>1000 ₽</span>
           </div>
           <div class="btns-wrapper">
-            <button class="btn pink-btn">Купить</button>
+            <button class="btn pink-btn" data-type="simple" data-simple-popup="calc-popup">Купить</button>
             <div class="btns-calc-wrapper">
               <button class="minus-btn">-</button>
               <span>1</span>
@@ -187,7 +165,7 @@
             <span>1200 ₽</span>
           </div>
           <div class="btns-wrapper">
-            <button class="btn pink-btn">Купить</button>
+            <button class="btn pink-btn" data-type="simple" data-simple-popup="calc-popup">Купить</button>
             <div class="btns-calc-wrapper">
               <button class="minus-btn">-</button>
               <span>1</span>
@@ -202,7 +180,7 @@
             <span>1500 ₽</span>
           </div>
           <div class="btns-wrapper">
-            <button class="btn pink-btn">Купить</button>
+            <button class="btn pink-btn" data-type="simple" data-simple-popup="calc-popup">Купить</button>
             <div class="btns-calc-wrapper">
               <button class="minus-btn">-</button>
               <span>1</span>
@@ -217,7 +195,7 @@
             <span>2500 ₽</span>
           </div>
           <div class="btns-wrapper">
-            <button class="btn pink-btn">Купить</button>
+            <button class="btn pink-btn" data-type="simple" data-simple-popup="calc-popup">Купить</button>
             <div class="btns-calc-wrapper">
               <button class="minus-btn">-</button>
               <span>1</span>
@@ -232,7 +210,7 @@
             <span>1500 ₽</span>
           </div>
           <div class="btns-wrapper">
-            <button class="btn pink-btn">Купить</button>
+            <button class="btn pink-btn" data-type="simple" data-simple-popup="calc-popup">Купить</button>
             <div class="btns-calc-wrapper">
               <button class="minus-btn">-</button>
               <span>1</span>

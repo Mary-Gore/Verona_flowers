@@ -29,6 +29,77 @@ section h1 {
   margin-bottom: 40px;
 }
 
+.fadeIn,
+.fadeOut,
+.slideInDown,
+.slideOutUp {
+  -webkit-animation-duration: 0.4s;
+  animation-duration: 0.4s;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+}
+
+.fadeIn {
+  -webkit-animation-name: fadeIn;
+  animation-name: fadeIn;
+  opacity: 1;
+  visibility: visible;
+}
+
+.fadeOut {
+  -webkit-animation-name: fadeOut;
+  animation-name: fadeOut;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.popup-fade {
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.yellow-btn {
+  padding: 15px 0;
+  min-width: 250px;
+  background: #fcfc6f;
+  border: 2px solid #fcfc6f;
+  color: #393E46;
+}
+
+.yellow-btn:hover {
+  background: #FCFC5B;
+  border: 2px solid #FCFC5B;
+}
+
+.pink-btn {
+  min-width: 150px;
+  padding: 10px 0;
+  background: #ff8caf;
+  border: none;
+  color: #fff;
+}
+
+.pink-btn:hover {
+  background: #F5749B;
+}
+
+.stroke-btn {
+  min-width: 250px;
+  padding: 15px 0;
+  background: none;
+  border: 2px solid #fcfc6f;
+  color: #fcfc6f;
+}
+
+.btn {
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 12px;
+  cursor: pointer;
+  font-family: 'Montserrat Alternates', sans-serif;
+}
+
 .main {
   background: gray;
   background: url("../images/backgroundImage.jpg") no-repeat;
@@ -129,47 +200,6 @@ section h1 {
 
 .offer .fill-btn {
   margin-right: 15px;
-}
-
-.btn {
-  border-radius: 5px;
-  font-weight: bold;
-  font-size: 12px;
-  cursor: pointer;
-  font-family: 'Montserrat Alternates', sans-serif;
-}
-
-.yellow-btn {
-  padding: 15px 0;
-  min-width: 250px;
-  background: #fcfc6f;
-  border: 2px solid #fcfc6f;
-  color: #393E46;
-}
-
-.yellow-btn:hover {
-  background: #FCFC5B;
-  border: 2px solid #FCFC5B;
-}
-
-.pink-btn {
-  min-width: 150px;
-  padding: 10px 0;
-  background: #ff8caf;
-  border: none;
-  color: #fff;
-}
-
-.pink-btn:hover {
-  background: #F5749B;
-}
-
-.stroke-btn {
-  min-width: 250px;
-  padding: 15px 0;
-  background: none;
-  border: 2px solid #fcfc6f;
-  color: #fcfc6f;
 }
 
 .main .stroke-btn:hover {
@@ -306,7 +336,7 @@ section h1 {
   width: 33%
 }
 
-.cart-body > .pink-btn {
+.cart-body>.pink-btn {
   margin-left: auto;
   display: block;
 }
@@ -623,4 +653,28 @@ footer .stroke-btn {
 footer .stroke-btn:hover {
   background: #393E46;
   color: #fff;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  to {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
 }
