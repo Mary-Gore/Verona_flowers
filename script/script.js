@@ -69,9 +69,6 @@ const countCatalog = () => {
 
   const btnCart = document.getElementById('cartBtn');
 
-  btnCart.addEventListener('click', () => {
-    window.location.href = '../cart.html'
-  });
 }
 
 countCatalog();
