@@ -79,6 +79,7 @@ const popupAnimate = () => {
 
       popup.classList.remove('fadeOut');
       popup.classList.add('fadeIn');
+      console.log('test');
     } else {
       popup.classList.remove('hide-mobile');
       popup.classList.add('show-mobile');

@@ -29,6 +29,35 @@ section h1 {
   margin-bottom: 40px;
 }
 
+.overlay {
+  opacity: 0;
+  visibility: hidden;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 5;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.popup {
+  background: #fff;
+  border: 5px solid #fcfc6f;
+  padding: 40px 60px 60px;
+  width: 100%;
+  max-width: 500px;
+  opacity: 0;
+  visibility: hidden;
+  position: fixed;
+  left: 50%;
+  z-index: 10;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+
 .fadeIn,
 .fadeOut,
 .slideInDown,
@@ -51,12 +80,6 @@ section h1 {
   animation-name: fadeOut;
   opacity: 0;
   visibility: hidden;
-}
-
-.popup-fade {
-  top: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
 }
 
 .yellow-btn {
@@ -356,16 +379,6 @@ section h1 {
   position: relative;
 }
 
-.calc-popup {
-  position: absolute;
-  width: 500px;
-  height: 400px;
-  background: #fff;
-  border: 5px solid #fcfc6f;
-  display: none;
-  padding: 40px;
-}
-
 .catalog-item {
   max-width: 300px;
   margin-top: 40px;
@@ -399,7 +412,7 @@ section h1 {
   height: 45px;
   padding: 10px;
   font-size: 12px;
-  margin-top: 20px;
+  margin-top: 40px;
 }
 
 .catalog .btns-wrapper {
@@ -428,7 +441,6 @@ section h1 {
 
 .calc-popup h2 {
   font-size: 18px;
-  margin-bottom: 20px;
   color: #393E46;
 }
 
@@ -440,6 +452,7 @@ section h1 {
 
 .catalog .wrapper-header {
   display: flex;
+  align-items: center;
 }
 
 .catalog .wrapper-close {
@@ -451,11 +464,20 @@ section h1 {
   opacity: 50%;
   width: 20px;
   height: 20px;
+  cursor: pointer;
+}
+
+.icon-close:hover {
+  fill: #272a2f;
 }
 
 .catalog .wrapper-inputs {
   display: flex;
   flex-direction: column;
+}
+
+.calc-form {
+  margin-top: 20px;
 }
 
 .catalog .calc-form input[type="checkbox"] {
