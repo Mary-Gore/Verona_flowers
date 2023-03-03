@@ -34,41 +34,28 @@ const countCatalog = () => {
 
 countCatalog();
 
-// корзина
-const cartBtn = document.getElementById('cart_btn'),
-  modalCart = document.querySelector('.cart'),
-  closeBtn = document.querySelector('.cart-close'),
-  catalogItems = document.querySelectorAll('.catalog-item'),
-  cartWrapper = document.querySelector('.cart-wrapper'),
-  cartEmpty = document.getElementById('cart_empty');
-
-catalogItems.forEach(item => {
-  btnBuy = item.querySelector('.btns-wrapper > button');
-
-  btnBuy.addEventListener('click', () => {
-    const cardClone = item.cloneNode(true);
-
-    cartWrapper.appendChild(cardClone);
-    cartEmpty.remove();
-
-  });
-});
-
-cartBtn.addEventListener('click', () => {
-  modalCart.style.display = 'flex';
-  document.body.style.overflow = 'hidden';
-});
-
-closeBtn.addEventListener('click', () => {
-  modalCart.style.display = 'none';
-  document.body.style.overflow = '';
-});
-// end корзина
-
-const checkPopupTotal = () => {
+const addToCart = () => {
   const calcPopup = document.querySelector('.calc-popup'),
     total = calcPopup.querySelector('.total > span'),
-    checkboxes = calcPopup.querySelectorAll('input[type="checkbox"]');
+    checkboxes = calcPopup.querySelectorAll('input[type="checkbox"]'),
+    offerCartBtn = document.getElementById('offer_cart_btn'),
+    cartBtn = document.getElementById('cart_btn'),
+    modalCart = document.querySelector('.cart'),
+    closeBtn = document.querySelector('.cart-close'),
+    catalogItems = document.querySelectorAll('.catalog-item'),
+    cartWrapper = document.querySelector('.cart-wrapper'),
+    cartCounter = document.querySelector('.cart-counter');
+  cartEmpty = document.getElementById('cart_empty');
+
+  cartBtn.addEventListener('click', () => {
+    modalCart.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+  });
+
+  closeBtn.addEventListener('click', () => {
+    modalCart.style.display = 'none';
+    document.body.style.overflow = '';
+  });
 
   checkboxes.forEach(checkbox => {
     checkbox.addEventListener('change', () => {
@@ -79,9 +66,25 @@ const checkPopupTotal = () => {
       }
     });
   });
+
+  catalogItems.forEach(item => {
+    const btnBuy = item.querySelector('.catalog .btns-wrapper > .pink-btn');
+
+    btnBuy.addEventListener('click', () => {
+      cardClone = item.cloneNode(true);
+      cartWrapper.appendChild(cardClone);
+      cartEmpty.remove();
+
+      offerCartBtn.addEventListener('click', () => {
+        const catalogCartItem = cartWrapper.querySelector('.catalog-item');
+        console.log('catalogCartItem: ', catalogCartItem);
+        catalogCartItem.querySelector('.wrapper-info > span').textContent = total.textContent;
+      });
+    });
+  });
 };
 
-checkPopupTotal();
+addToCart();
 
 const popupAnimate = () => {
   const dataPopupsBtns = document.querySelectorAll('[data-simple-popup]');
@@ -156,8 +159,3 @@ const popupAnimate = () => {
 };
 
 popupAnimate();
-
-
-
-
-
