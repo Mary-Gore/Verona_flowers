@@ -135,6 +135,7 @@ section h1 {
   border-radius: 5px;
   font-weight: bold;
   font-size: 12px;
+  cursor: pointer;
   font-family: 'Montserrat Alternates', sans-serif;
 }
 
@@ -169,6 +170,12 @@ section h1 {
   background: none;
   border: 2px solid #fcfc6f;
   color: #fcfc6f;
+}
+
+.main .stroke-btn:hover {
+  background: #fcfc6f;
+  color: #393E46;
+  border: 2px solid #fcfc6f;
 }
 
 .main-contacts {
@@ -272,7 +279,6 @@ section h1 {
   cursor: pointer;
   height: 25px;
   width: 25px;
-  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24'%3E%3Cpath fill='005bff' d='M12 10.587l6.293-6.294a1 1 0 111.414 1.414l-6.293 6.295 6.293 6.294a1 1 0 11-1.414 1.414L12 13.416 5.707 19.71a1 1 0 01-1.414-1.414l6.293-6.294-6.293-6.295a1 1 0 011.414-1.414L12 10.587z'/%3E%3C/svg%3E")
 }
 
 .cart-wrapper {
@@ -298,6 +304,11 @@ section h1 {
 
 .cart-wrapper .card {
   width: 33%
+}
+
+.cart-body > .pink-btn {
+  margin-left: auto;
+  display: block;
 }
 
 .catalog {
@@ -405,7 +416,7 @@ section h1 {
   margin-left: auto;
 }
 
-.calc-popup .icon-close {
+.icon-close {
   fill: #4A4F57;
   opacity: 50%;
   width: 20px;
