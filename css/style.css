@@ -29,6 +29,18 @@ section h1 {
   margin-bottom: 40px;
 }
 
+.popup.show-mobile,
+.overlay.show-mobile {
+  visibility: visible;
+  opacity: 1;
+}
+
+.popup.hide-mobile,
+.overlay.hide-mobile {
+  visibility: hidden;
+  opacity: 0;
+}
+
 .overlay {
   opacity: 0;
   visibility: hidden;
@@ -56,7 +68,6 @@ section h1 {
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
 }
-
 
 .fadeIn,
 .fadeOut,

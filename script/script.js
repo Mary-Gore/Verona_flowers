@@ -9,10 +9,10 @@ const countCatalog = () => {
       spanCalc = countItem.querySelector('.btns-calc-wrapper span'),
       price = countItem.querySelector('.wrapper-info span'),
       startPrice = parseFloat(price.textContent),
-      calcPopup = countItem.querySelector('.calc-popup'),
+      calcPopup = document.querySelector('.calc-popup'),
       total = calcPopup.querySelector('.total > span'),
       checkboxes = calcPopup.querySelectorAll('input[type="checkbox"]'),
-      btnClose = countItem.querySelector('.icon-close'),
+      btnClose = calcPopup.querySelector('.icon-close'),
       btnBuy = countItem.querySelector('.btns-wrapper > button');
 
     plusBtn.addEventListener('click', () => {
@@ -46,8 +46,6 @@ const countCatalog = () => {
     });
 
     btnClose.addEventListener('click', () => {
-      calcPopup.style.display = 'none';
-
       checkboxes.forEach(checkbox => {
         if (checkbox.checked) {
           checkbox.checked = false;
@@ -61,7 +59,7 @@ const countCatalog = () => {
 
 }
 
-//countCatalog();
+countCatalog();
 
 const popupAnimate = () => {
   const dataPopupsBtns = document.querySelectorAll('[data-simple-popup]');
@@ -76,15 +74,13 @@ const popupAnimate = () => {
     if (window.innerWidth > 992) {
       overlay.classList.remove('fadeOut');
       overlay.classList.add('fadeIn');
-
       popup.classList.remove('fadeOut');
       popup.classList.add('fadeIn');
-      console.log('test');
     } else {
+      overlay.classList.remove('hide-mobile');
+      overlay.classList.add('show-mobile');
       popup.classList.remove('hide-mobile');
       popup.classList.add('show-mobile');
-      overlay.style.visibillity = 'visible';
-      overlay.style.opacity = '1';
     }
 
     popup.classList.add('is-open');
@@ -96,17 +92,14 @@ const popupAnimate = () => {
         if (window.innerWidth > 992) {
           popupElem.classList.remove('fadeIn');
           popupElem.classList.add('fadeOut');
+          overlay.classList.remove('fadeIn');
+          overlay.classList.add('fadeOut');
         }
       } else {
+        overlay.classList.remove('show-mobile');
+        overlay.classList.add('hide-mobile');
         popupElem.classList.remove('show-mobile');
         popupElem.classList.add('hide-mobile');
-        overlay.style.visibillity = 'hidden';
-        overlay.style.opacity = '0';
-      }
-
-      if (window.innerWidth > 992) {
-        overlay.classList.remove('fadeIn');
-        overlay.classList.add('fadeOut');
       }
 
       popupElem.classList.remove('is-open');
@@ -116,7 +109,6 @@ const popupAnimate = () => {
   for (let elem of dataPopupsBtns) {
     elem.addEventListener('click', () => {
       let popup = document.getElementById(elem.dataset.simplePopup);
-      console.log('popup: ', popup);
       modalShow(popup);
     });
   }
