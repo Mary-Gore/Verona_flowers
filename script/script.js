@@ -72,7 +72,7 @@ const addToCart = () => {
       sumSpan = item.querySelector('.wrapper-info > span');
 
     btnBuy.addEventListener('click', () => {
-      cardClone = item.cloneNode(true);
+      const cardClone = item.cloneNode(true);
       cartWrapper.appendChild(cardClone);
       cartEmpty.remove();
 
@@ -81,6 +81,12 @@ const addToCart = () => {
       offerCartBtn.addEventListener('click', () => {
         const catalogCartItem = cartWrapper.querySelector('.catalog-item');
         catalogCartItem.querySelector('.wrapper-info > span').textContent = total.textContent;
+        checkboxes.forEach(checkbox => {
+          if (checkbox.checked) {
+            const checkboxClone = checkbox.parentElement.cloneNode(true);
+            cartWrapper.appendChild(checkboxClone);
+          }
+        })
       });
 
       const spanContent = item.querySelector('.catalog .btns-calc-wrapper > span');
@@ -89,6 +95,12 @@ const addToCart = () => {
 
     if (calcPopup.classList.contains('is-open') === false) {
       total.textContent = item.querySelector('.wrapper-info > span').textContent;
+
+      checkboxes.forEach(checkbox => {
+        if (checkbox.checked) {
+          checkbox.checked = false;
+        }
+      });
     }
   });
 };
@@ -138,12 +150,6 @@ const popupAnimate = () => {
       }
 
       popupElem.classList.remove('is-open');
-
-      checkboxes.forEach(checkbox => {
-        if (checkbox.checked) {
-          checkbox.checked = false;
-        }
-      });
     }
   };
 
