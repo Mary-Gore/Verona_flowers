@@ -16,14 +16,14 @@ const countCatalog = () => {
       count++;
       spanCalc.textContent = count;
       price.textContent = `${startPrice * count} ₽`;
-      total.textContent = price.textContent;
+      total.textContent = parseFloat(price.textContent);
     });
 
     minusBtn.addEventListener('click', () => {
       if (count > 1) {
         count--;
         price.textContent = `${parseFloat(price.textContent) - startPrice} ₽`;
-        total.textContent = price.textContent;
+        total.textContent = parseFloat(price.textContent);
       }
 
       spanCalc.textContent = count;
@@ -67,23 +67,30 @@ const addToCart = () => {
   });
 
   catalogItems.forEach(item => {
-    const btnBuy = item.querySelector('.catalog .btns-wrapper > .pink-btn');
+    const btnBuy = item.querySelector('.catalog .btns-wrapper > .pink-btn'),
+      calcPopup = document.querySelector('.calc-popup'),
+      sumSpan = item.querySelector('.wrapper-info > span');
 
     btnBuy.addEventListener('click', () => {
       cardClone = item.cloneNode(true);
       cartWrapper.appendChild(cardClone);
       cartEmpty.remove();
 
+      total.textContent = sumSpan.textContent;
+
       offerCartBtn.addEventListener('click', () => {
         const catalogCartItem = cartWrapper.querySelector('.catalog-item');
         catalogCartItem.querySelector('.wrapper-info > span').textContent = total.textContent;
-         
       });
 
       const spanContent = item.querySelector('.catalog .btns-calc-wrapper > span');
       cartCounter.textContent = parseInt(cartCounter.textContent) + parseInt(spanContent.textContent);
+    });
+
+    if (calcPopup.classList.contains('is-open') === false) {
+      total.textContent = item.querySelector('.wrapper-info > span').textContent;
+    }
   });
-});
 };
 
 addToCart();
@@ -96,7 +103,7 @@ const popupAnimate = () => {
   const overlay = document.querySelector('.overlay'),
     popups = document.querySelectorAll('.popup'),
     dataClose = document.querySelectorAll('[data-closed]'),
-    checkboxes = document.querySelectorAll('input[type="checkbox"]');
+    checkboxes = document.querySelectorAll('.calc-popup input[type="checkbox"]');
 
   const modalShow = popup => {
     if (window.innerWidth > 992) {
@@ -115,9 +122,6 @@ const popupAnimate = () => {
   };
 
   const modalClose = e => {
-    const total = document.querySelector('.total > span'),
-      wrapperInfoSpan = document.querySelector('.wrapper-info > span');
-
     for (let popupElem of popups) {
       if (popupElem.classList.contains('is-open') && (e.type !== 'keydown' || e.keyCode === 27)) {
         if (window.innerWidth > 992) {
@@ -140,9 +144,6 @@ const popupAnimate = () => {
           checkbox.checked = false;
         }
       });
-
-      total.textContent =
-        `${parseFloat(wrapperInfoSpan.textContent)} ₽`;
     }
   };
 
