@@ -72,8 +72,12 @@ const addToCart = () => {
       sumSpan = item.querySelector('.wrapper-info > span');
 
     btnBuy.addEventListener('click', () => {
+      const card = document.createElement('div');
+      card.classList.add('card');
+
       const cardClone = item.cloneNode(true);
-      cartWrapper.appendChild(cardClone);
+      card.appendChild(cardClone);
+      cartWrapper.appendChild(card);
       cartEmpty.remove();
 
       total.textContent = sumSpan.textContent;
@@ -84,7 +88,7 @@ const addToCart = () => {
         checkboxes.forEach(checkbox => {
           if (checkbox.checked) {
             const checkboxClone = checkbox.parentElement.cloneNode(true);
-            cartWrapper.appendChild(checkboxClone);
+            card.appendChild(checkboxClone);
           }
         })
       });

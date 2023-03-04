@@ -405,8 +405,8 @@ section h1 {
   align-items: center;
 }
 
-.catalog-item .wrapper-info p {
-  margin-right: 40px;
+.catalog-item .wrapper-info span {
+  margin-left: 40px;
 }
 
 .catalog-item img {
@@ -427,22 +427,26 @@ section h1 {
   margin-top: 40px;
 }
 
-.catalog .btns-wrapper {
+.catalog .btns-wrapper,
+.cart .btns-wrapper {
   display: flex;
   align-items: center;
 }
 
-.catalog .btns-calc-wrapper {
+.catalog .btns-calc-wrapper,
+.cart .btns-calc-wrapper {
   margin-left: 35px;
 }
 
-.catalog .btns-calc-wrapper span {
-  margin: 0 5px 0 5px;
+.catalog .btns-calc-wrapper span,
+.cart .btns-calc-wrapper span {
   font-size: 14px;
   font-weight: bold;
+  padding: 3px;
 }
 
-.catalog .btns-calc-wrapper button {
+.catalog .btns-calc-wrapper button,
+.cart .btns-calc-wrapper button {
   width: 25px;
   height: 25px;
   border: 1px solid #F5749B;
@@ -451,6 +455,7 @@ section h1 {
   font-weight: bold;
   cursor: pointer;
 }
+
 
 .calc-popup h2 {
   font-size: 18px;
@@ -493,20 +498,23 @@ section h1 {
   margin-top: 20px;
 }
 
-.catalog .answer-wrapper input[type="checkbox"] {
+.catalog .answer-wrapper input[type="checkbox"],
+.cart input[type="checkbox"] {
   position: absolute;
   z-index: -1;
   opacity: 0;
 }
 
-.catalog .answer-wrapper input[type="checkbox"]+label {
+.catalog .answer-wrapper input[type="checkbox"]+label,
+.cart input[type="checkbox"]+label {
   display: flex;
   align-items: center;
   user-select: none;
   font-size: 14px;
 }
 
-.catalog .answer-wrapper input[type="checkbox"]+label::before {
+.catalog .answer-wrapper input[type="checkbox"]+label::before,
+.cart input[type="checkbox"]+label::before {
   content: '';
   border: 1px solid #393E46;
   border-radius: 3px;
@@ -523,14 +531,21 @@ section h1 {
   background-position: center center;
 }
 
-.catalog .answer-wrapper input[type="checkbox"]:checked+label::before {
+.catalog .answer-wrapper input[type="checkbox"]:checked+label::before,
+.cart input[type="checkbox"]:checked+label::before {
   background-color: #393E46;
   background-image: url("data: image/svg+xml, %3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg' %3E %3Cpath d='M12.736 3.97C12.8043 3.90037 12.8857 3.84505 12.9756 3.80728C13.0655 3.76952 13.162 3.75007 13.2595 3.75007C13.357 3.75007 13.4535 3.76952 13.5434 3.80728C13.6333 3.84505 13.7148 3.90037 13.783 3.97C14.069 4.259 14.073 4.726 13.793 5.02L7.88001 12.01C7.81288 12.0837 7.73141 12.143 7.64059 12.1841C7.54977 12.2253 7.45151 12.2475 7.35182 12.2493C7.25213 12.2512 7.1531 12.2327 7.0608 12.195C6.9685 12.1573 6.88487 12.1011 6.81501 12.03L3.21701 8.384C3.07825 8.24249 3.00052 8.0522 3.00052 7.854C3.00052 7.6558 3.07825 7.46551 3.21701 7.324C3.28526 7.25437 3.36671 7.19905 3.4566 7.16128C3.54649 7.12352 3.64301 7.10407 3.74051 7.10407C3.83801 7.10407 3.93453 7.12352 4.02442 7.16128C4.11431 7.19905 4.19576 7.25437 4.26401 7.324L7.31601 10.417L12.716 3.992C12.7222 3.98427 12.7289 3.97692 12.736 3.97Z' fill='white' /%3E %3C/svg%3E");
 }
 
-.catalog .checkbox-wrapper {
+.catalog .answer-wrapper > .checkbox-wrapper,
+.cart .card .checkbox-wrapper {
   margin-bottom: 8px;
 }
+
+.cart .catalog-item {
+  margin: 0 20px 30px 0;
+}
+
 
 footer {
   background: #fcfc6f;
