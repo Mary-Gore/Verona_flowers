@@ -12,7 +12,6 @@ const countCatalog = () => {
       calcPopup = document.querySelector('.calc-popup'),
       total = calcPopup.querySelector('.total > span');
 
-
     plusBtn.addEventListener('click', () => {
       count++;
       spanCalc.textContent = count;
@@ -77,11 +76,14 @@ const addToCart = () => {
 
       offerCartBtn.addEventListener('click', () => {
         const catalogCartItem = cartWrapper.querySelector('.catalog-item');
-        console.log('catalogCartItem: ', catalogCartItem);
         catalogCartItem.querySelector('.wrapper-info > span').textContent = total.textContent;
+         
       });
-    });
+
+      const spanContent = item.querySelector('.catalog .btns-calc-wrapper > span');
+      cartCounter.textContent = parseInt(cartCounter.textContent) + parseInt(spanContent.textContent);
   });
+});
 };
 
 addToCart();

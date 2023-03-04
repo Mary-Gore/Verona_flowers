@@ -377,7 +377,7 @@ section h1 {
 }
 
 .catalog {
-  padding-top: 120px;
+  padding: 120px 0;
 }
 
 .catalog h1 {
@@ -530,81 +530,6 @@ section h1 {
 
 .catalog .checkbox-wrapper input[type="checkbox"]+label:not(:last-child) {
   margin-bottom: 8px;
-}
-
-.contacts h1 {
-  margin-bottom: 60px;
-}
-
-.contacts {
-  padding: 120px 0 120px;
-}
-
-.contact-block {
-  margin-right: 120px;
-}
-
-.contact-block>div {
-  display: flex;
-}
-
-.contact-block>div:not(:last-child) {
-  margin-bottom: 18px;
-}
-
-.contact-block>div:first-child {
-  align-items: baseline;
-}
-
-.contact-block>div:not(:first-child) {
-  align-items: center;
-}
-
-.contact-block>div:last-child {
-  align-items: flex-start;
-}
-
-.contact-block svg {
-  margin-right: 15px;
-}
-
-.contact-block .icon-phone {
-  width: 22px;
-  height: 22px;
-  stroke: #ff8caf;
-}
-
-.contact-block .icon-geo {
-  width: 17px;
-  height: 22px;
-  fill: #ff8caf;
-}
-
-.contact-block .icon-mail {
-  width: 19px;
-  height: 15px;
-  stroke: #ff8caf;
-  fill: none;
-}
-
-.contact-block .icon-time {
-  width: 18px;
-  height: 18px;
-  fill: #ff8caf;
-}
-
-.contact-block .para-wrapper {
-  display: flex;
-  flex-direction: column;
-}
-
-.contact-block .para-wrapper p {
-  margin-bottom: 5px;
-}
-
-.contacts-main-wrapper {
-  display: flex;
-  justify-content: space-around;
 }
 
 footer {
