@@ -34,7 +34,7 @@ const countCatalog = () => {
 countCatalog();
 
 const addToCart = () => {
-  const calcPopup = document.querySelector('.calc-popup'),
+  const calcPopup = document.getElementById('calc_popup'),
     total = calcPopup.querySelector('.total > span'),
     checkboxes = calcPopup.querySelectorAll('input[type="checkbox"]'),
     offerCartBtn = document.getElementById('offer_cart_btn'),
@@ -71,6 +71,18 @@ const addToCart = () => {
       calcPopup = document.querySelector('.calc-popup'),
       sumSpan = item.querySelector('.wrapper-info > span');
 
+    const showData = () => {
+      const spanContent = item.querySelector('.catalog .btns-calc-wrapper > span'),
+        cartItemsSum = cartWrapper.querySelectorAll('.cart .wrapper-info > span'),
+        cartTotal = document.querySelector('.cart-total > span');
+
+      cartCounter.textContent = parseInt(cartCounter.textContent) + parseInt(spanContent.textContent);
+   
+      cartItemsSum.forEach(item => {
+        console.log(parseFloat(item.textContent));
+      });
+    };
+
     btnBuy.addEventListener('click', () => {
       const card = document.createElement('div');
       card.classList.add('card');
@@ -80,32 +92,32 @@ const addToCart = () => {
       cartWrapper.appendChild(card);
       cartEmpty.remove();
 
+
       total.textContent = sumSpan.textContent;
 
       offerCartBtn.addEventListener('click', () => {
         const catalogCartItem = cartWrapper.querySelector('.catalog-item');
         catalogCartItem.querySelector('.wrapper-info > span').textContent = total.textContent;
+      });
+
+
+      if (calcPopup.classList.contains('is-open') === false) {
+        total.textContent = item.querySelector('.wrapper-info > span').textContent;
+        checkboxes.forEach(checkbox => {
+          if (checkbox.checked) {
+            checkbox.checked = false;
+          }
+        });
+      } else {
         checkboxes.forEach(checkbox => {
           if (checkbox.checked) {
             const checkboxClone = checkbox.parentElement.cloneNode(true);
             card.appendChild(checkboxClone);
           }
         })
-      });
-
-      const spanContent = item.querySelector('.catalog .btns-calc-wrapper > span');
-      cartCounter.textContent = parseInt(cartCounter.textContent) + parseInt(spanContent.textContent);
+      }
+      showData();
     });
-
-    if (calcPopup.classList.contains('is-open') === false) {
-      total.textContent = item.querySelector('.wrapper-info > span').textContent;
-
-      checkboxes.forEach(checkbox => {
-        if (checkbox.checked) {
-          checkbox.checked = false;
-        }
-      });
-    }
   });
 };
 
