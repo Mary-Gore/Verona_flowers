@@ -46,9 +46,25 @@ const addToCart = () => {
     cartCounter = document.querySelector('.cart-counter');
   cartEmpty = document.getElementById('cart_empty');
 
+
+  const showData = () => {
+    cartItemsSum = cartWrapper.querySelectorAll('.cart-body .wrapper-info > span'),
+      cartTotal = document.querySelector('.cart-total > span');
+
+    let cartSum = 0;
+
+    cartItemsSum.forEach(item => {
+      let price = parseFloat(item.textContent);
+      cartSum += price;
+    });
+
+    cartTotal.textContent = cartSum;
+  };
+
   cartBtn.addEventListener('click', () => {
     modalCart.style.display = 'flex';
     document.body.style.overflow = 'hidden';
+    showData();
   });
 
   closeBtn.addEventListener('click', () => {
@@ -71,18 +87,6 @@ const addToCart = () => {
       calcPopup = document.querySelector('.calc-popup'),
       sumSpan = item.querySelector('.wrapper-info > span');
 
-    const showData = () => {
-      const spanContent = item.querySelector('.catalog .btns-calc-wrapper > span'),
-        cartItemsSum = cartWrapper.querySelectorAll('.cart .wrapper-info > span'),
-        cartTotal = document.querySelector('.cart-total > span');
-
-      cartCounter.textContent = parseInt(cartCounter.textContent) + parseInt(spanContent.textContent);
-   
-      cartItemsSum.forEach(item => {
-        console.log(parseFloat(item.textContent));
-      });
-    };
-
     btnBuy.addEventListener('click', () => {
       const card = document.createElement('div');
       card.classList.add('card');
@@ -98,8 +102,14 @@ const addToCart = () => {
       offerCartBtn.addEventListener('click', () => {
         const catalogCartItem = cartWrapper.querySelector('.catalog-item');
         catalogCartItem.querySelector('.wrapper-info > span').textContent = total.textContent;
-      });
 
+        checkboxes.forEach(checkbox => {
+          if (checkbox.checked) {
+            const checkboxClone = checkbox.parentElement.cloneNode(true);
+            card.appendChild(checkboxClone);
+          }
+        })
+      });
 
       if (calcPopup.classList.contains('is-open') === false) {
         total.textContent = item.querySelector('.wrapper-info > span').textContent;
@@ -108,15 +118,10 @@ const addToCart = () => {
             checkbox.checked = false;
           }
         });
-      } else {
-        checkboxes.forEach(checkbox => {
-          if (checkbox.checked) {
-            const checkboxClone = checkbox.parentElement.cloneNode(true);
-            card.appendChild(checkboxClone);
-          }
-        })
       }
-      showData();
+
+      const spanContent = item.querySelector('.catalog .btns-calc-wrapper > span');
+      cartCounter.textContent = parseInt(cartCounter.textContent) + parseInt(spanContent.textContent);
     });
   });
 };
