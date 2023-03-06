@@ -48,7 +48,7 @@ const addToCart = () => {
 
 
   const showData = () => {
-    cartItemsSum = cartWrapper.querySelectorAll('.cart-body .wrapper-info > span'),
+    const cartItemsSum = cartWrapper.querySelectorAll('.cart-body .wrapper-info > span'),
       cartTotal = document.querySelector('.cart-total > span');
 
     let cartSum = 0;
