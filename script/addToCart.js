@@ -6,15 +6,22 @@ const addToCart = () => {
       const catalogItem = e.target.closest('.catalog-item');
 
       const productInfo = {
-        id: catalogItem.getAttribute('id'),
+        id: catalogItem.dataset.id,
         imgSrc: catalogItem.querySelector('.catalog-item img').getAttribute('src'),
         title: catalogItem.querySelector('.vendor-code').textContent,
         price: parseFloat(catalogItem.querySelector('.price').textContent),
         counter: catalogItem.querySelector('.count-num').textContent
       };
 
-      const cartItemHTML = `
-          <div class="cart-item" id="${productInfo.id}">
+      // Проверка на наличие подобного товара в корзине
+      const itemInCart = cartWrapper.querySelector(`[data-id="${(productInfo.id)}"]`);
+
+      if (itemInCart) {
+        const countNum = itemInCart.querySelector('.count-num');
+        countNum.textContent = parseInt(countNum.textContent) + parseInt(productInfo.counter);
+      } else {
+        const cartItemHTML = `
+          <div class="cart-item" data-id="${productInfo.id}">
           <div class="img-wrapper">
             <img src="${productInfo.imgSrc}" alt="${productInfo.title}">
           </div>
@@ -32,7 +39,9 @@ const addToCart = () => {
         </div>
     `;
 
-      cartWrapper.insertAdjacentHTML('beforeend', cartItemHTML);
+        cartWrapper.insertAdjacentHTML('beforeend', cartItemHTML);
+      }
+
 
       catalogItem.querySelector('.count-num').textContent = '1';
 

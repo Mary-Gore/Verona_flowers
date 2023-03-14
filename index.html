@@ -7,10 +7,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Доставка цветов "Verona"</title>
   <link rel="stylesheet" href="css/style.css">
-    <script defer src="script/eventListeners.js"></script>
+  <script defer src="script/eventListeners.js"></script>
   <script defer src="script/count.js"></script>
   <script defer src="script/addToCart.js"></script>
   <script defer src="script/calcPrice.js"></script>
+  <script defer src="script/toggleCartStatus.js"></script>
   <!--<script defer src="script/cart.js"></script>-->
 </head>
 
@@ -79,7 +80,7 @@
       <h1>Каталог</h1>
       <div class="catalog-wrapper">
         <div class="overlay" data-closed></div>
-        <div id="01" class="catalog-item">
+        <div data-id="01" class="catalog-item">
           <div class="img-wrapper">
             <img src="images/imageCatalog1.jpg" alt="image 1">
           </div>
@@ -96,7 +97,7 @@
             </div>
           </div>
         </div>
-        <div id="02" class="catalog-item">
+        <div data-id="02" class="catalog-item">
           <div class="img-wrapper">
             <img src="images/imageCatalog2.jpg" alt="image 2">
           </div>
@@ -113,7 +114,7 @@
             </div>
           </div>
         </div>
-        <div id="03" class="catalog-item">
+        <div data-id="03" class="catalog-item">
           <div class="img-wrapper">
             <img src="images/imageCatalog3.jpg" alt="image 3">
           </div>
@@ -130,7 +131,7 @@
             </div>
           </div>
         </div>
-        <div id="04" class="catalog-item last">
+        <div data-id="04" class="catalog-item last">
           <div class="img-wrapper">
             <img src="images/imageCatalog6.jpg" alt="image 4">
           </div>
@@ -147,7 +148,7 @@
             </div>
           </div>
         </div>
-        <div id="05" class="catalog-item">
+        <div data-id="05" class="catalog-item">
           <div class="img-wrapper">
             <img src="images/imageCatalog7.jpg" alt="image 5">
           </div>
@@ -164,7 +165,7 @@
             </div>
           </div>
         </div>
-        <div id="06" class="catalog-item">
+        <div data-id="06" class="catalog-item">
           <div class="img-wrapper">
             <img src="images/imageCatalog4.jpg" alt="image 6">
           </div>
@@ -181,7 +182,7 @@
             </div>
           </div>
         </div>
-        <div id="07" class="catalog-item">
+        <div data-id="07" class="catalog-item">
           <div class="img-wrapper">
             <img src="images/imageCatalog5.jpg" alt="image 7">
           </div>
@@ -198,7 +199,7 @@
             </div>
           </div>
         </div>
-        <div id="08" class="catalog-item last">
+        <div data-id="08" class="catalog-item last">
           <div class="img-wrapper">
             <img src="images/imageCatalog8.jpg" alt="image 8">
           </div>
@@ -254,9 +255,9 @@
       <p class="cart-total">Общая сумма: <span>0</span> руб</p>
 
       <div class="cart-wrapper">
-        <!--<p id="cart_empty" class="cart-empty">
+        <p id="cart_empty" class="cart-empty">
           Ваша корзина пока пуста
-        </p>-->
+        </p>
 
       </div>
       <button class="btn pink-btn">Оформить заказ</button>

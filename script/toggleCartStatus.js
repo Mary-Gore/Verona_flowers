@@ -1,13 +1,12 @@
 const toggleCartStatus = () => {
   const cartWrapper = document.querySelector('.cart-wrapper'),
-  cartEmpty = document.querySelector('[data-cart-empty]'),
-  orderForm = document.getElementById('order-form');
+    cartEmpty = document.getElementById('cart_empty');
 
-  if (cartWrapper.children.length > 0) {
-    cartEmpty.classList.add('none');
-    orderForm.classList.remove('none');
-  } else {
-    cartEmpty.classList.remove('none');
-    orderForm.classList.add('none');
-  }
+    if (cartWrapper.children.length > 0) {
+      cartEmpty.style.display = 'none';
+    } else {
+      cartEmpty.style.display = 'block';
+    }
 };
+
+toggleCartStatus();
