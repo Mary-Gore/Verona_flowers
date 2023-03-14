@@ -452,21 +452,13 @@ section h1 {
   margin: 12px 0 15px 0;
 }
 
-.calc-popup .btn {
-  width: 200px;
-  height: 45px;
-  padding: 10px;
-  font-size: 12px;
-  margin-top: 40px;
-}
-
 .catalog .btns-wrapper,
 .cart .btns-wrapper {
   display: flex;
   align-items: center;
 }
 
-.catalog .btns-calc-wrapper {
+.catalog .counter-wrapper {
   margin-left: 35px;
 }
 
@@ -477,8 +469,8 @@ section h1 {
   padding: 3px;
 }
 
-.catalog .btns-calc-wrapper button,
-.cart .btns-calc-wrapper button {
+.catalog .counter-wrapper button,
+.cart .counter-wrapper button {
   width: 25px;
   height: 25px;
   border: 1px solid #F5749B;
@@ -486,12 +478,6 @@ section h1 {
   color: #F5749B;
   font-weight: bold;
   cursor: pointer;
-}
-
-
-.calc-popup h2 {
-  font-size: 18px;
-  color: #393E46;
 }
 
 .catalog .total p {

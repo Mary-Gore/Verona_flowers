@@ -1,4 +1,3 @@
-
 const addToCart = () => {
   const cartWrapper = document.querySelector('.cart-wrapper');
 
@@ -22,10 +21,10 @@ const addToCart = () => {
           <div class="content">
             <p class="vendor-code">${productInfo.title}</p>
             <div class="calc-price-wrap">
-              <div class="btns-calc-wrapper">
-                <button class="minus-btn">-</button>
+              <div class="counter-wrapper">
+                <button data-action="minus">-</button>
                 <span class="count-num">${productInfo.counter}</span>
-                <button class="plus-btn">+</button>
+                <button data-action="plus">+</button>
               </div>
               <span class="price">${productInfo.price} ₽</span>
             </div>
@@ -34,6 +33,10 @@ const addToCart = () => {
     `;
 
       cartWrapper.insertAdjacentHTML('beforeend', cartItemHTML);
+
+      catalogItem.querySelector('.count-num').textContent = '1';
+
+      calcPrice();
     }
   });
 };

@@ -1,25 +1,31 @@
 const count = () => {
-  const catalogItems = document.querySelectorAll('.catalog-item');
+  window.addEventListener('click', e => {
+    let countNum;
 
-  catalogItems.forEach(countItem => {
-    const plusBtn = countItem.querySelector('.plus-btn'),
-      minusBtn = countItem.querySelector('.minus-btn'),
-      spanCalc = countItem.querySelector('.btns-calc-wrapper span'),
-      price = countItem.querySelector('.wrapper-info span'),
-      startPrice = parseFloat(price.textContent);
+    if (e.target.dataset.action === 'minus' || e.target.dataset.action === 'plus') {
+      const counterWrapper = e.target.closest('.counter-wrapper');
+      countNum = counterWrapper.querySelector('.count-num');
+    }
 
+    if (e.target.dataset.action === 'minus') {
+      if (parseInt(countNum.textContent) > 1) {
+        countNum.textContent = --countNum.textContent;
+      } else if (e.target.closest('.cart-wrapper') && parseInt(countNum.textContent) === 1) {
+        e.target.closest('.cart-item').remove();
 
-    plusBtn.addEventListener('click', () => {
-      spanCalc.textContent = ++spanCalc.textContent;
-      price.textContent = `${startPrice * parseInt(spanCalc.textContent)} ₽`;
-    });
-
-    minusBtn.addEventListener('click', () => {
-      if (parseInt(spanCalc.textContent) > 1) {
-        spanCalc.textContent = --spanCalc.textContent;
-        price.textContent = `${parseFloat(price.textContent) - startPrice} ₽`;
+        calcPrice();
       }
-    });
+    }
+
+    if (e.target.dataset.action === 'plus') {
+      countNum.textContent = ++countNum.textContent;
+    }
+
+    // Проверка на клик +- в корзине
+    if (e.target.hasAttribute('data-action') && e.target.closest('.cart-wrapper')) {
+      // Пересчёт общей стоимости в корзине
+      calcPrice();
+    }
   });
 };
 
