@@ -390,7 +390,7 @@ section h1 {
   color: #4d5f71
 }
 
-.cart-wrapper .card {
+.cart-wrapper .cart-item {
   width: 33%
 }
 
@@ -570,17 +570,13 @@ section h1 {
 }
 
 .catalog .answer-wrapper>.checkbox-wrapper,
-.cart .card .checkbox-wrapper {
+.cart .cart-item .checkbox-wrapper {
   margin-bottom: 8px;
 }
 
 
 .cart .catalog-item {
   margin: 0 20px 20px 0;
-}
-
-.cart .card {
-  margin-bottom: 30px;
 }
 
 footer {

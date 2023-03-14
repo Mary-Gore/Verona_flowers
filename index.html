@@ -8,6 +8,7 @@
   <title>Доставка цветов "Verona"</title>
   <link rel="stylesheet" href="css/style.css">
   <script defer src="script/count.js"></script>
+  <script defer src="script/addToCart.js"></script>
   <!--<script defer src="script/cart.js"></script>-->
 </head>
 
@@ -235,7 +236,7 @@
             <span class="price">1500 ₽</span>
           </div>
           <div class="btns-wrapper">
-            <button data-cart="btn pink-btn" data-type="simple" data-simple-popup="calc_popup">Купить</button>
+            <button data-cart class="btn pink-btn" data-type="simple" data-simple-popup="calc_popup">Купить</button>
             <div class="btns-calc-wrapper">
               <button class="minus-btn">-</button>
               <span class="count-num">1</span>
@@ -245,7 +246,6 @@
         </div>
       </div>
     </div>
-
   </section>
 
   <footer>
@@ -286,22 +286,7 @@
         <!--<p id="cart_empty" class="cart-empty">
           Ваша корзина пока пуста
         </p>-->
-        <div class="cart-item">
-          <div class="img-wrapper">
-            <img src="images/imageCatalog8.jpg" alt="image 8">
-          </div>
-          <div class="content">
-            <p class="vendor-code">Артикул: 01312615</p>
-            <div class="calc-price-wrap">
-              <div class="btns-calc-wrapper">
-                <button class="minus-btn">-</button>
-                <span class="count-num">1</span>
-                <button class="plus-btn">+</button>
-              </div>
-              <span class="price">1500 ₽</span>
-            </div>
-          </div>
-        </div>
+    
       </div>
       <button class="btn pink-btn">Оформить заказ</button>
       <div class="cart-close">
