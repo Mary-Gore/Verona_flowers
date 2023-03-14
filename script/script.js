@@ -29,7 +29,7 @@ const countCatalog = () => {
       spanCalc.textContent = count;
     });
   });
-}
+};
 
 countCatalog();
 
@@ -117,7 +117,7 @@ const addToCart = () => {
             checkbox.checked = false;
           }
         });
-      } 
+      }
 
       showData();
 
