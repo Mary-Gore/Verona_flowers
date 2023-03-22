@@ -403,25 +403,28 @@ section h1 {
   padding: 120px 0;
 }
 
-.catalog h1 {
-  margin-bottom: 0;
-}
-
-.catalog-wrapper {
+/*.catalog-wrapper {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   position: relative;
+} */
+
+.catalog-wrapper {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: auto;
+  grid-gap: 40px 30px;
 }
 
-.catalog-item {
+/*.catalog-item {
   max-width: 300px;
   margin-top: 40px;
-}
+} 
 
 .catalog-item:not(.last) {
   margin-right: 20px;
-}
+} */
 
 .catalog-item .wrapper-info {
   display: flex;
