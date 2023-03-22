@@ -308,7 +308,7 @@ section h1 {
 .cart-body {
   position: relative;
   margin: auto;
-  width: 1024px;
+  max-width: 1024px;
   min-height: 200px;
   max-height: 640px;
   background: #fff;
@@ -330,7 +330,8 @@ section h1 {
 }
 
 .cart .cart-item>.img-wrapper {
-  max-width: 100px;
+  width: 100px;
+  height: 100px;
 }
 
 .cart .content {
@@ -787,6 +788,14 @@ footer .stroke-btn:hover {
   .politics a {
     font-size: 11px;
   }
+
+  .cart-wrapper .cart-item {
+    width: 100%;
+  }
+
+  .cart-item:not(:last-child) {
+    margin-bottom: 10px;
+  }
 }
 
 @media screen and (min-width: 320px) and (max-width: 699px) {
@@ -807,7 +816,6 @@ footer .stroke-btn:hover {
   .main h1 {
     font-size: 30px;
   }
-
 
   .catalog-wrapper {
     grid-template-columns: 1fr;
@@ -858,5 +866,18 @@ footer .stroke-btn:hover {
 
   .politics ul li:not(:last-child) {
     margin: 0 0 10px;
+  }
+
+  .cart-body>h2 {
+    font-size: 20px;
+    margin-bottom: 5px;
+  }
+
+  .cart-total {
+    font-size: 15px;
+  }
+
+  .cart .icon-close {
+    width: 15px;
   }
 }
