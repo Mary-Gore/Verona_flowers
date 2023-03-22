@@ -144,6 +144,10 @@ section h1 {
   padding: 40px 0 30px;
 }
 
+.icon-burger {
+  cursor: pointer;
+}
+
 .container {
   max-width: 1366px;
   margin: 0 auto;
@@ -165,6 +169,11 @@ section h1 {
 
 .logo-wrapper p:nth-child(2) {
   font-size: 14px;
+}
+
+.main .logo-wrapper>p:last-child {
+  margin-top: -3px;
+  font-size: 12px;
 }
 
 .main-menu,
@@ -681,6 +690,23 @@ footer .stroke-btn:hover {
 }
 
 @media screen and (min-width: 577px) and (max-width: 992px) {
+  .main {
+    background-position: 40% 10%;
+    max-height: 600px;
+  }
+
+  .main h1 {
+    font-size: 35px;
+  }
+
+  section h1:not(.main h1) {
+    font-size: 24px;
+  }
+
+  .catalog {
+    padding: 60px 0;
+  }
+
   .catalog-wrapper {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -697,9 +723,78 @@ footer .stroke-btn:hover {
   .catalog .counter-wrapper {
     margin: 15px 0 0;
   }
-  
+
   .catalog .pink-btn {
     width: 100%;
+  }
+
+  .head-footer {
+    align-items: self-start;
+    justify-content: space-between;
+  }
+
+  .head-footer nav {
+    margin-left: 0;
+  }
+
+  footer .stroke-btn {
+    display: none;
+  }
+
+  footer .phone-wrapper {
+    margin-left: 0;
+  }
+
+  footer .phone-wrapper .icon-phone {
+    margin-right: 5px;
+    width: 16px;
+    stroke: #4A4F57;
+  }
+
+  footer .phone-wrapper a {
+    color: #4A4F57;
+    font-size: 13px;
+  }
+
+  .footer-menu li {
+    margin-bottom: 5px;
+  }
+}
+
+
+@media screen and (min-width: 320px) and (max-width: 992px) {
+  .cart-wrapper {
+    flex-direction: column;
+  }
+
+  .main .phone-wrapper {
+    display: none;
+  }
+
+  .main .main-menu {
+    display: none;
+  }
+
+  .main .logo-wrapper {
+    margin: -7px 0 0 20px;
+  }
+
+  .main .logo-wrapper>p:first-child {
+    font-size: 25px;
+  }
+
+  .header-wrapper {
+    align-items: flex-start;
+  }
+
+  .politics a {
+    font-size: 11px;
+  }
+}
+
+@media screen and (min-width: 320px) and (max-width: 699px) {
+  .footer-menu {
+    flex-direction: column;
   }
 }
 
