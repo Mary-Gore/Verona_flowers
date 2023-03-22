@@ -1,12 +1,12 @@
 const toggleCartStatus = () => {
-  const cartWrapper = document.querySelector('.cart-wrapper'),
     cartEmpty = document.getElementById('cart_empty');
+  const cartItems = document.querySelectorAll('.cart-item');
 
-    if (cartWrapper.children.length > 0) {
-      cartEmpty.style.display = 'none';
-    } else {
-      cartEmpty.style.display = 'block';
-    }
+  if (cartItems.length > 0) {
+    cartEmpty.style.display = 'none';
+  } else {
+    cartEmpty.style.display = 'block';
+  }
 };
 
 toggleCartStatus();

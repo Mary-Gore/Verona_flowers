@@ -1,9 +1,11 @@
 const addToCart = () => {
-  const cartWrapper = document.querySelector('.cart-wrapper');
+  const cartWrapper = document.querySelector('.cart-wrapper'),
+    cartCounter = document.querySelector('.cart-counter');
 
   window.addEventListener('click', e => {
     if (e.target.hasAttribute('data-cart')) {
-      const catalogItem = e.target.closest('.catalog-item');
+      const catalogItem = e.target.closest('.catalog-item'),
+        countNum = catalogItem.querySelector('.count-num');
 
       const productInfo = {
         id: catalogItem.dataset.id,
@@ -43,9 +45,10 @@ const addToCart = () => {
       }
 
 
-      catalogItem.querySelector('.count-num').textContent = '1';
-
+      cartCounter.textContent = countNum.textContent;
+      countNum.textContent = '1';
       calcPrice();
+      toggleCartStatus();
     }
   });
 };
