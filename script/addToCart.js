@@ -1,6 +1,5 @@
 const addToCart = () => {
-  const cartWrapper = document.querySelector('.cart-wrapper'),
-    cartCounter = document.querySelector('.cart-counter');
+  const cartWrapper = document.querySelector('.cart-wrapper');
 
   window.addEventListener('click', e => {
     if (e.target.hasAttribute('data-cart')) {
@@ -44,9 +43,8 @@ const addToCart = () => {
         cartWrapper.insertAdjacentHTML('beforeend', cartItemHTML);
       }
 
-
-      cartCounter.textContent = countNum.textContent;
       countNum.textContent = '1';
+
       calcPrice();
       toggleCartStatus();
     }

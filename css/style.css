@@ -462,15 +462,11 @@ section h1 {
   margin-right: 30px;
 }
 
-.catalog .counter-wrapper {
-  margin-left: 35px;
-}
-
 .catalog .count-num,
 .cart .count-num {
   font-size: 14px;
   font-weight: bold;
-  padding: 3px;
+  padding: 0 5px;
 }
 
 .catalog .counter-wrapper button,
@@ -516,11 +512,6 @@ section h1 {
   flex-direction: column;
 }
 
-.answer-wrapper {
-  margin-top: 20px;
-}
-
-.catalog .answer-wrapper input[type="checkbox"],
 .cart input[type="checkbox"] {
   position: absolute;
   z-index: -1;
