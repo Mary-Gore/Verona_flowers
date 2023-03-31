@@ -3,11 +3,11 @@ const eventListeners = () => {
 
   document.body.addEventListener('click', e => {
     if (e.target.id === 'cart_btn') {
-      document.querySelector('.cart').style.display = 'block';
+      cart.style.display = 'block';
     }
 
-    if (e.target.closest('.cart-close')) {
-      document.querySelector('.cart').style.display = 'none';
+    if (e.target.closest('.cart .popup-close')) {
+      cart.style.display = 'none';
     }
   });
 
@@ -16,7 +16,7 @@ const eventListeners = () => {
     target = target.closest('.cart-body');
 
     if (!target) {
-     cart.style.display = 'none';
+      cart.style.display = 'none';
     }
   });
 };

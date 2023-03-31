@@ -50,7 +50,7 @@
           с композициями от лучших флористов
         </p>
         <div class="btns">
-          <button class="btn yellow-btn">Заказать звонок</button>
+          <button class="btn yellow-btn" data-simple-popup="callback-popup">Заказать звонок</button>
         </div>
       </div>
       <div class="main-contacts">
@@ -75,6 +75,37 @@
             </svg>
           </a>
         </div>
+      </div>
+    </div>
+
+    <div class="overlay" data-closed></div>
+    <div id="callback-popup" class="popup popup-slide callback-popup" data-type="simple" data-type-animate="slide">
+      <div class="popup-close">
+        <svg class="icon-close" data-closed>
+          <use xlink:href="icons/icons.svg#iconCross"></use>
+        </svg>
+      </div>
+      <div class="callback-content">
+        <h2>Заказать <span>звонок</span></h2>
+        <p class="subtitle">Пожалуйста, заполните <br>Ваши контактные данные</p>
+        <form id="callback-form" class="callback-form">
+          <div class="input-wrapper">
+            <input type="text" class="user-name stroke-inputs" placeholder="Ваше имя">
+            <span class="error-span"></span>
+          </div>
+          <div class="input-wrapper">
+            <input type="tel" class="phone stroke-inputs" placeholder="+7 (000) ___-__-__">
+            <span class="error-span"></span>
+          </div>
+          <div class="check-column">
+            <button class="btn yellow-btn" type="submit" data-finish-popup="finish-popup">Отправить данные</button>
+            <div class="check-block">
+              <input checked type="checkbox" class="yellow-checkbox" id="checkbox-callback">
+              <label for="checkbox-callback">Даю согласие на обработку данных</label>
+              <span class="error-span margin-bottom-0"></span>
+            </div>
+          </div>
+        </form>
       </div>
     </div>
   </section>
@@ -270,7 +301,7 @@
 
       </div>
       <button class="btn pink-btn">Оформить заказ</button>
-      <div class="cart-close">
+      <div class="popup-close">
         <svg class="icon-close">
           <use xlink:href="icons/icons.svg#iconCross"></use>
         </svg>
