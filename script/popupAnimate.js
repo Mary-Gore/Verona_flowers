@@ -21,7 +21,7 @@ const popupAnimate = () => {
     } else {
       popup.classList.remove('hide-mobile');
       popup.classList.add('show-mobile');
-      overlay.style.visibillity = 'visible';
+      overlay.style.visibility = 'visible';
       overlay.style.opacity = '1';
     }
 
@@ -35,6 +35,8 @@ const popupAnimate = () => {
     for (let popupElem of popups) {
       if (popupElem.classList.contains('is-open') && (e.type !== 'keydown' || e.keyCode === 27)) {
         if (window.innerWidth > 992) {
+          overlay.classList.remove('fadeIn');
+          overlay.classList.add('fadeOut');
           if ((popupElem.dataset.typeAnimate === 'slide')) {
             popupElem.classList.remove('slideInDown');
             popupElem.classList.add('slideOutUp');
@@ -45,13 +47,8 @@ const popupAnimate = () => {
         } else {
           popupElem.classList.remove('show-mobile');
           popupElem.classList.add('hide-mobile');
-          overlay.style.visibillity = 'hidden';
+          overlay.style.visibility = 'hidden';
           overlay.style.opacity = '0';
-        }
-
-        if (window.innerWidth > 992) {
-          overlay.classList.remove('fadeIn');
-          overlay.classList.add('fadeOut');
         }
 
         popupElem.classList.remove('is-open');

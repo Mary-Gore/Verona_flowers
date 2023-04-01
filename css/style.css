@@ -414,46 +414,46 @@ section h1 {
   align-items: center;
 }
 
-.callback-form .stroke-inputs {
+form .stroke-inputs {
   border: 1px solid #000;
   color: #000;
   border: 1px solid #8A9086;
-  width: 250px;
-  height: 50px;
   padding-left: 17px;
   font-size: 14px;
   font-family: inherit;
+  width: 250px;
+  height: 50px;
   margin-bottom: 30px;
 }
 
-.callback-form .stroke-inputs::-webkit-input-placeholder {
+form .stroke-inputs::-webkit-input-placeholder {
   color: #8A9086;
   font-family: inherit;
 }
 
 /* Firefox 19+ */
-.callback-form .input-wrapper::-moz-placeholder {
+form .input-wrapper::-moz-placeholder {
   color: #8A9086;
   font-family: inherit;
 }
 
 /* Firefox 18- */
-.callback-form .stroke-inputs:-moz-placeholder {
+form .stroke-inputs:-moz-placeholder {
   color: #8A9086;
   font-family: inherit;
 }
 
-.callback-form .stroke-inputs:-ms-input-placeholder {
+form .stroke-inputs:-ms-input-placeholder {
   color: #8A9086;
   font-family: inherit;
 }
 
-.callback-form .stroke-inputs::placeholder {
+form .stroke-inputs::placeholder {
   color: #8A9086;
   font: 400 14px/1.2 'Montserrat Alternates', sans-serif;
 }
 
-.callback-form .check-block {
+form .check-block {
   margin-top: 17px;
   display: flex;
   align-items: center;
@@ -586,11 +586,6 @@ section h1 {
 
 .icon-close:hover {
   fill: #272a2f;
-}
-
-.catalog .wrapper-inputs {
-  display: flex;
-  flex-direction: column;
 }
 
 .cart input[type="checkbox"] {
@@ -979,6 +974,28 @@ footer .stroke-btn:hover {
 
   .main h1 {
     font-size: 30px;
+  }
+
+  form .stroke-inputs {
+    font-size: 12px;
+    width: 100%;
+  }
+
+  .popup {
+    width: 100%;
+    padding: 60px 15px 60px;
+  }
+
+  .popup.show-mobile {
+    top: 15px;
+    left: 0;
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .callback-popup,
+  .finish-popup {
+    min-height: 430px;
   }
 
   .catalog-wrapper {
