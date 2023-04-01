@@ -349,16 +349,12 @@ section h1 {
   border: 5px solid #fcfc6f;
   padding: 40px 60px 60px;
   width: 100%;
-  max-width: 500px;
   opacity: 0;
   visibility: hidden;
   text-align: center;
   position: fixed;
   left: 50%;
   z-index: 10;
-  top: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
 }
 
 .popup h2 {
@@ -396,10 +392,6 @@ section h1 {
 
 .popup {
   padding-top: 106px;
-}
-
-.callback-popup .callback-content {
-  flex-direction: column;
 }
 
 .callback-popup,
@@ -745,6 +737,11 @@ footer .stroke-btn:hover {
     visibility: visible;
   }
 
+  form .stroke-inputs,
+  .popup .btn {
+    width: 270px;
+  }
+
   .catalog {
     padding: 60px 0;
   }
@@ -832,6 +829,14 @@ footer .stroke-btn:hover {
 
   .main .logo-wrapper>p:first-child {
     font-size: 25px;
+  }
+
+  .popup.hide-mobile {
+    top: 0;
+    -webkit-transform: translate(-50%, -100%);
+    transform: translate(-50%, -100%);
+    visibility: hidden;
+    opacity: 0;
   }
 
   .header-wrapper {
@@ -982,7 +987,6 @@ footer .stroke-btn:hover {
   }
 
   .popup {
-    width: 100%;
     padding: 60px 15px 60px;
   }
 
@@ -991,6 +995,14 @@ footer .stroke-btn:hover {
     left: 0;
     opacity: 1;
     visibility: visible;
+  }
+
+  .popup .btn {
+    width: 100%;
+  }
+
+  .popup .check-column {
+    width: 100%;
   }
 
   .callback-popup,
