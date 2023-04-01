@@ -12,7 +12,7 @@
   <script defer src="script/addToCart.js"></script>
   <script defer src="script/calcPrice.js"></script>
   <script defer src="script/toggleCartStatus.js"></script>
-  <!--<script defer src="script/cart.js"></script>-->
+  <script defer src="script/popupAnimate.js"></script>
 </head>
 
 <body>
@@ -123,7 +123,7 @@
             <span class="price">1500 ₽</span>
           </div>
           <div class="btns-wrapper">
-            <button data-cart class="btn pink-btn" data-type="simple" data-simple-popup="calc_popup">В корзину</button>
+            <button data-cart class="btn pink-btn" data-type="simple">В корзину</button>
             <div class="counter-wrapper">
               <button data-action="minus">-</button>
               <span class="count-num">1</span>
@@ -140,7 +140,7 @@
             <span class="price">2000 ₽</span>
           </div>
           <div class="btns-wrapper">
-            <button data-cart class="btn pink-btn" data-type="simple" data-simple-popup="calc_popup">В корзину</button>
+            <button data-cart class="btn pink-btn" data-type="simple">В корзину</button>
             <div class="counter-wrapper">
               <button data-action="minus">-</button>
               <span class="count-num">1</span>
@@ -157,7 +157,7 @@
             <span class="price">800 ₽</span>
           </div>
           <div class="btns-wrapper">
-            <button data-cart class="btn pink-btn" data-type="simple" data-simple-popup="calc_popup">В корзину</button>
+            <button data-cart class="btn pink-btn" data-type="simple" >В корзину</button>
             <div class="counter-wrapper">
               <button data-action="minus">-</button>
               <span class="count-num">1</span>
@@ -174,7 +174,7 @@
             <span class="price">1000 ₽</span>
           </div>
           <div class="btns-wrapper">
-            <button data-cart class="btn pink-btn" data-type="simple" data-simple-popup="calc_popup">В корзину</button>
+            <button data-cart class="btn pink-btn" data-type="simple" >В корзину</button>
             <div class="counter-wrapper">
               <button data-action="minus">-</button>
               <span class="count-num">1</span>
@@ -191,7 +191,7 @@
             <span class="price">1200 ₽</span>
           </div>
           <div class="btns-wrapper">
-            <button data-cart class="btn pink-btn" data-type="simple" data-simple-popup="calc_popup">В корзину</button>
+            <button data-cart class="btn pink-btn" data-type="simple" >В корзину</button>
             <div class="counter-wrapper">
               <button data-action="minus">-</button>
               <span class="count-num">1</span>
@@ -208,7 +208,7 @@
             <span class="price">1500 ₽</span>
           </div>
           <div class="btns-wrapper">
-            <button data-cart class="btn pink-btn" data-type="simple" data-simple-popup="calc_popup">В корзину</button>
+            <button data-cart class="btn pink-btn" data-type="simple" >В корзину</button>
             <div class="counter-wrapper">
               <button data-action="minus">-</button>
               <span>1</span>
@@ -225,7 +225,7 @@
             <span class="price">2500 ₽</span>
           </div>
           <div class="btns-wrapper">
-            <button data-cart class="btn pink-btn" data-type="simple" data-simple-popup="calc_popup">В корзину</button>
+            <button data-cart class="btn pink-btn" data-type="simple" >В корзину</button>
             <div class="counter-wrapper">
               <button data-action="minus">-</button>
               <span class="count-num">1</span>
@@ -242,7 +242,7 @@
             <span class="price">1500 ₽</span>
           </div>
           <div class="btns-wrapper">
-            <button data-cart class="btn pink-btn" data-type="simple" data-simple-popup="calc_popup">В корзину</button>
+            <button data-cart class="btn pink-btn" data-type="simple" >В корзину</button>
             <div class="counter-wrapper">
               <button data-action="minus">-</button>
               <span class="count-num">1</span>
@@ -270,7 +270,7 @@
               <li><a href="#contacts">Контакты</a></li>
             </ul>
           </nav>
-          <button class="btn stroke-btn">Заказать звонок</button>
+          <button class="btn stroke-btn" data-simple-popup="callback-popup">Заказать звонок</button>
           <div class="phone-wrapper">
             <svg class="icon-phone">
               <use xlink:href="icons/icons.svg#iconCall"></use>

@@ -29,30 +29,6 @@ section h1 {
   margin-bottom: 40px;
 }
 
-.fadeIn,
-.fadeOut,
-.slideInDown,
-.slideOutUp {
-  -webkit-animation-duration: 0.4s;
-  animation-duration: 0.4s;
-  -webkit-animation-timing-function: linear;
-  animation-timing-function: linear;
-}
-
-.fadeIn {
-  -webkit-animation-name: fadeIn;
-  animation-name: fadeIn;
-  opacity: 1;
-  visibility: visible;
-}
-
-.fadeOut {
-  -webkit-animation-name: fadeOut;
-  animation-name: fadeOut;
-  opacity: 0;
-  visibility: hidden;
-}
-
 .yellow-btn {
   padding: 15px 0;
   min-width: 250px;
@@ -751,30 +727,6 @@ footer .stroke-btn:hover {
   color: #fff;
 }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    visibility: hidden;
-  }
-
-  to {
-    opacity: 1;
-    visibility: visible;
-  }
-}
-
-@keyframes fadeOut {
-  from {
-    opacity: 1;
-    visibility: visible;
-  }
-
-  to {
-    opacity: 0;
-    visibility: hidden;
-  }
-}
-
 @media screen and (min-width: 577px) and (max-width: 992px) {
   .main {
     background-position: 40% 10%;
@@ -787,6 +739,15 @@ footer .stroke-btn:hover {
 
   section h1:not(.main h1) {
     font-size: 24px;
+  }
+
+  .popup.show-mobile {
+    top: 30px;
+    left: 50%;
+    -webkit-transform: translate(-50%, 30px);
+    transform: translate(-50%, 30px);
+    opacity: 1;
+    visibility: visible;
   }
 
   .catalog {
@@ -849,6 +810,7 @@ footer .stroke-btn:hover {
   footer .phone-wrapper {
     display: flex;
   }
+
 }
 
 
@@ -891,6 +853,112 @@ footer .stroke-btn:hover {
 
   .cart-item:not(:last-child) {
     margin-bottom: 10px;
+  }
+}
+
+@media (min-width: 993px) {
+  .popup-slide {
+    top: 0;
+    left: 50%;
+    -webkit-transform: translate(-50%, -100%);
+    transform: translate(-50%, -100%);
+    visibility: visible;
+    opacity: 1;
+  }
+
+  .popup-fade {
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
+
+  .fadeIn,
+  .fadeOut,
+  .slideInDown,
+  .slideOutUp {
+    -webkit-animation-duration: 0.4s;
+    animation-duration: 0.4s;
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+  }
+
+  .fadeIn {
+    -webkit-animation-name: fadeIn;
+    animation-name: fadeIn;
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .fadeOut {
+    -webkit-animation-name: fadeOut;
+    animation-name: fadeOut;
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  .slideInDown {
+    -webkit-animation-name: slideInDown;
+    animation-name: slideInDown;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
+
+  .slideOutUp {
+    -webkit-animation-name: slideOutUp;
+    animation-name: slideOutUp;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    to {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+  @keyframes fadeOut {
+    from {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    to {
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
+
+  @keyframes slideInDown {
+    from {
+      top: 0;
+      -webkit-transform: translate(-50%, -100%);
+      transform: translate(-50%, -100%);
+    }
+
+    to {
+      top: 50%;
+      -webkit-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  @keyframes slideOutUp {
+    from {
+      top: 50%;
+      -webkit-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+    }
+
+    to {
+      top: 0;
+      -webkit-transform: translate(-50%, -100%);
+      transform: translate(-50%, -100%);
+    }
   }
 }
 
