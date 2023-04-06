@@ -14,6 +14,7 @@
   <script defer src="script/toggleCartStatus.js"></script>
   <script defer src="script/popupAnimate.js"></script>
   <script defer src="script/plugins/validator/Validator.js"></script>
+  <script defer src="script/sendForm.js"></script>
   <script defer src="script/validateIForm.js"></script>
 </head>
 
@@ -96,14 +97,13 @@
           </div>
           <div class="input-wrapper">
             <input id="phone" type="tel" class="phone stroke-inputs" placeholder="+7(000)000-00-00">
-          </div>>
-   
+          </div>
+
           <div class="check-column">
             <button class="btn yellow-btn" type="submit" data-finish-popup="finish-popup">Отправить данные</button>
             <div class="check-block">
-              <input checked type="checkbox" class="yellow-checkbox" id="checkbox_callback">
-              <label for="checkbox-callback">Даю согласие на обработку данных</label>
-              <span class="error-span"></span>
+              <input checked type="checkbox" class="yellow-checkbox" id="checkbox">
+              <label for="checkbox">Даю согласие на обработку данных</label>
             </div>
           </div>
         </form>

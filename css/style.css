@@ -29,6 +29,21 @@ section h1 {
   margin-bottom: 40px;
 }
 
+form .btn.active {
+  background-color: #fcfc6f;
+}
+
+form .btn.disable {
+  background-color: #F8F8B1;
+  border-color: #F8F8B1;
+  color: #4A4F57;
+}
+
+.img-preloader {
+  width: 50px;
+  height: 50px;
+}
+
 .yellow-btn {
   padding: 15px 0;
   min-width: 250px;
@@ -369,13 +384,10 @@ section h1 {
 
 .popup .subtitle {
   font-size: 16px;
-  margin-bottom: 50px;
+  margin-bottom: 35px;
   color: #000;
 }
 
-.popup .green-checkbox+label {
-  color: #8A9086;
-}
 
 .stroke-inputs.success {
   border: 2px solid #ede619;
@@ -386,7 +398,7 @@ section h1 {
 }
 
 .validator-error {
-  margin: 5px;
+  margin: 5px 0;
   font-size: 12px;
   color: #000;
 }
@@ -405,7 +417,7 @@ section h1 {
 }
 
 .popup {
-  padding-top: 106px;
+  padding-top: 100px;
 }
 
 .callback-popup,
@@ -435,7 +447,7 @@ form .input-wrapper {
   height: 50px;
 }
 
-form .input-wrapper:not(:nth-child(2)) {
+form .input-wrapper {
   margin-bottom: 30px;
 }
 
@@ -495,6 +507,7 @@ form .check-block {
   в состоянии checked */
   background-repeat: no-repeat;
   background-position: center center;
+  cursor: pointer;
 }
 
 .yellow-checkbox:checked+label::before {
@@ -600,50 +613,6 @@ form .check-block {
 .icon-close:hover {
   fill: #272a2f;
 }
-
-.cart input[type="checkbox"] {
-  position: absolute;
-  z-index: -1;
-  opacity: 0;
-}
-
-.catalog .answer-wrapper input[type="checkbox"]+label,
-.cart input[type="checkbox"]+label {
-  display: flex;
-  align-items: center;
-  user-select: none;
-  font-size: 14px;
-}
-
-.catalog .answer-wrapper input[type="checkbox"]+label::before,
-.cart input[type="checkbox"]+label::before {
-  content: '';
-  border: 1px solid #393E46;
-  border-radius: 3px;
-  margin-right: 12px;
-  width: 16px;
-  height: 16px;
-  display: inline-block;
-  flex-shrink: 0;
-  flex-grow: 0;
-
-  /* Св-ва, определяющие положение флажка 
-    в состоянии checked */
-  background-repeat: no-repeat;
-  background-position: center center;
-}
-
-.catalog .answer-wrapper input[type="checkbox"]:checked+label::before,
-.cart input[type="checkbox"]:checked+label::before {
-  background-color: #393E46;
-  background-image: url("data: image/svg+xml, %3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg' %3E %3Cpath d='M12.736 3.97C12.8043 3.90037 12.8857 3.84505 12.9756 3.80728C13.0655 3.76952 13.162 3.75007 13.2595 3.75007C13.357 3.75007 13.4535 3.76952 13.5434 3.80728C13.6333 3.84505 13.7148 3.90037 13.783 3.97C14.069 4.259 14.073 4.726 13.793 5.02L7.88001 12.01C7.81288 12.0837 7.73141 12.143 7.64059 12.1841C7.54977 12.2253 7.45151 12.2475 7.35182 12.2493C7.25213 12.2512 7.1531 12.2327 7.0608 12.195C6.9685 12.1573 6.88487 12.1011 6.81501 12.03L3.21701 8.384C3.07825 8.24249 3.00052 8.0522 3.00052 7.854C3.00052 7.6558 3.07825 7.46551 3.21701 7.324C3.28526 7.25437 3.36671 7.19905 3.4566 7.16128C3.54649 7.12352 3.64301 7.10407 3.74051 7.10407C3.83801 7.10407 3.93453 7.12352 4.02442 7.16128C4.11431 7.19905 4.19576 7.25437 4.26401 7.324L7.31601 10.417L12.716 3.992C12.7222 3.98427 12.7289 3.97692 12.736 3.97Z' fill='white' /%3E %3C/svg%3E");
-}
-
-.catalog .answer-wrapper>.checkbox-wrapper,
-.cart .cart-item .checkbox-wrapper {
-  margin-bottom: 8px;
-}
-
 
 .cart .catalog-item {
   margin: 0 20px 20px 0;
@@ -758,7 +727,7 @@ footer .stroke-btn:hover {
     visibility: visible;
   }
 
-  form .stroke-inputs,
+  form .input-wrapper,
   .popup .btn {
     width: 270px;
   }

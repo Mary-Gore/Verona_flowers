@@ -12,6 +12,9 @@ const valid = new Validator({
     'phone': [
       ['notEmpty'],
       ['pattern', 'phone']
+    ],
+    'checkbox': [
+      ['isChecked', 'checkbox']
     ]
   }
 });

@@ -7,18 +7,34 @@ class Validator {
       return item.tagName.toLowerCase() !== 'button' && item.type !== 'button';
     });
 
+    this.btnSubmit = this.form.querySelector('button[type="submit"]');
     this.error = new Set();
   }
 
   init() {
     this.setPattern();
-    this.elementsForm.forEach(elem => elem.addEventListener('change', this.checkIt.bind(this)));
-    this.form.addEventListener('submit', e => {
-      this.elementsForm.forEach(elem => this.checkIt({ target: elem }));
-      if (this.error.size) {
-        e.preventDefault();
+
+    this.elementsForm.forEach(elem => {
+      if (elem.value === '') {
+        this.btnSubmit.disabled = true;
+        this.btnSubmit.classList.remove('active');
+        this.btnSubmit.classList.add('disable');
+        this.error.add(elem);
       }
     });
+
+    this.elementsForm.forEach(elem => elem.addEventListener('change', this.checkIt.bind(this)));
+    this.elementsForm.forEach(elem => elem.addEventListener('change', () => {
+      if (this.error.size) {
+        this.btnSubmit.disabled = true;
+        this.btnSubmit.classList.remove('active');
+        this.btnSubmit.classList.add('disable');
+      } else {
+        this.btnSubmit.disabled = false;
+        this.btnSubmit.classList.remove('disable');
+        this.btnSubmit.classList.add('active');
+      }
+    }));
   }
 
   isValid(elem) {
@@ -31,6 +47,13 @@ class Validator {
       },
       pattern(elem, pattern) {
         return pattern.test(elem.value);
+      },
+      isChecked(elem) {
+        if (elem.type === 'checkbox') {
+          if (!elem.checked) {
+            return false;
+          }
+        }
       }
     };
 
@@ -53,12 +76,17 @@ class Validator {
       this.showSuccess(target);
       this.error.delete(target);
     } else {
-      this.showError(target);
+      if (target.type !== 'checkbox') {
+        this.showError(target, 'Недопустимый формат');
+      } else {
+        this.showError(target, 'Согласитесь с условиями');
+      }
+
       this.error.add(target);
     }
   }
 
-  showError(elem) {
+  showError(elem, message) {
     elem.classList.remove('success');
     elem.classList.add('error');
     if (elem.nextElementSibling && elem.nextElementSibling.classList.contains('validator-error')) {
@@ -66,18 +94,20 @@ class Validator {
     }
 
     const errorDiv = document.createElement('div');
-    errorDiv.textContent = 'Недопустимый формат';
+    errorDiv.textContent = message;
     errorDiv.classList.add('validator-error');
-    elem.insertAdjacentElement('afterend', errorDiv);
-    if (errorDiv.parentElement && errorDiv.parentElement.classList.contains('input-wrapper')) {
-      errorDiv.parentElement.style.marginBottom = '35px';
+    if (elem.type !== 'checkbox') {
+      elem.insertAdjacentElement('afterend', errorDiv);
+    } else {
+      elem.parentElement.insertAdjacentElement('afterend', errorDiv);
     }
   }
 
   showSuccess(elem) {
     elem.classList.remove('error');
     elem.classList.add('success');
-    if (elem.nextElementSibling && elem.nextElementSibling.classList.contains('validator-error')) {
+    if (elem.type !== 'checkbox' && elem.nextElementSibling
+      && elem.nextElementSibling.classList.contains('validator-error')) {
       elem.nextElementSibling.remove();
     }
   }
@@ -87,3 +117,4 @@ class Validator {
     this.pattern.name ? this.pattern.name : this.pattern.name = /^[а-яё]{3,10}$/i;
   }
 }
+
