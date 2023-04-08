@@ -8,11 +8,22 @@ const sendForm = id => {
     event.preventDefault();
     form.parentNode.append(statusMessage);
 
-     btnSubmit.classList.remove('active');
-     btnSubmit.classList.add('disable');
-     btnSubmit.disabled = true; 
+    btnSubmit.classList.remove('active');
+    btnSubmit.classList.add('disable');
+    btnSubmit.disabled = true;
 
-    statusMessage.innerHTML = `<img class='img-preloader' src='./icons/iconSpinnerAnimated.svg'/>`;
+    if (window.innerWidth > 992) {
+      statusMessage.innerHTML = `<img class='img-preloader' src='icons/iconSpinnerAnimated.svg'/>`;
+    } else {
+      statusMessage.innerHTML = 'Загрузка...';
+      statusMessage.style.cssText = `
+            font-size: 16px;
+            text-align: center;
+            display: block;
+            color: #000;
+            margin-top: 30px;
+      `;
+    }
 
     const formData = new FormData(form),
       body = {};
@@ -35,12 +46,8 @@ const sendForm = id => {
       .then(response => {
         [...form.elements].forEach(item => item.value = '');
 
-        /*  const btnSubmit = form.querySelector('button[type="submit"]'),
-            popup = document.getElementById(btnSubmit.dataset.finishPopup); */
-        statusMessage.style.cssText = `
-            font-size: 16px;
-            text-align: center;
-          `;
+        const btnSubmit = form.querySelector('button[type="submit"]'),
+          popup = document.getElementById(btnSubmit.dataset.finishPopup);
 
         if (response.status !== 200) {
           statusMessage.textContent = errorMessage;
@@ -49,10 +56,9 @@ const sendForm = id => {
           throw new Error('status network is not 200');
         }
 
-        statusMessage.textContent = 'Отправлено!';
-
-        //statusMessage.textContent = '';
-        // statusMessage.style.display = 'none';
+        animateFinishPopup(popup);
+        statusMessage.textContent = '';
+        statusMessage.style.display = 'none';
       })
       .catch(error => {
         console.error(error);

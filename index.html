@@ -14,8 +14,9 @@
   <script defer src="script/toggleCartStatus.js"></script>
   <script defer src="script/popupAnimate.js"></script>
   <script defer src="script/plugins/validator/Validator.js"></script>
-  <script defer src="script/sendForm.js"></script>
   <script defer src="script/validateIForm.js"></script>
+  <script defer src="script/sendForm.js"></script>
+  <script defer src="script/animateFinishPopup.js"></script>
 </head>
 
 <body>
@@ -88,7 +89,7 @@
           <use xlink:href="icons/icons.svg#iconCross"></use>
         </svg>
       </div>
-      <div class="callback-content">
+      <div>
         <h2>Заказать <span>звонок</span></h2>
         <p class="subtitle">Пожалуйста, заполните <br>Ваши контактные данные</p>
         <form id="callback_form" class="callback-form">
@@ -107,6 +108,19 @@
             </div>
           </div>
         </form>
+      </div>
+    </div>
+    <div id="finish-popup" class="popup popup-fade finish-popup" data-type-animate="fadeInOut">
+      <div class="popup-close">
+        <svg class="icon-close" data-closed>
+          <use xlink:href="icons/icons.svg#iconCross"></use>
+        </svg>
+      </div>
+      <h2>Спасибо!</h2>
+      <p class="subtitle">Мы скоро с Вами <br> свяжемся</p>
+      <div class="popup-content">
+        <img src="icons/iconHeadphones.svg" alt="hearts" class="call-img">
+        <button type="button" class="btn yellow-btn" data-closed>Буду ждать</button>
       </div>
     </div>
   </section>

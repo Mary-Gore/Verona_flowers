@@ -370,6 +370,9 @@ form .btn.disable {
   position: fixed;
   left: 50%;
   z-index: 10;
+  padding-top: 100px;
+  min-height: 600px;
+  max-width: 600px;
 }
 
 .popup h2 {
@@ -388,6 +391,15 @@ form .btn.disable {
   color: #000;
 }
 
+.popup .call-img {
+  margin: 30px 0 80px;
+}
+
+.finish-popup .popup-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
 .stroke-inputs.success {
   border: 2px solid #ede619;
@@ -414,16 +426,6 @@ form .btn.disable {
 
 .popup .hearts-img {
   margin: 30px 0 80px;
-}
-
-.popup {
-  padding-top: 100px;
-}
-
-.callback-popup,
-.finish-popup {
-  min-height: 600px;
-  max-width: 600px;
 }
 
 .callback-form {
@@ -971,13 +973,25 @@ footer .stroke-btn:hover {
     font-size: 30px;
   }
 
+  form .input-wrapper {
+    width: 100%;
+  }
+
   form .stroke-inputs {
     font-size: 12px;
-    width: 100%;
   }
 
   .popup {
     padding: 60px 15px 60px;
+    min-height: 430px;
+  }
+
+  .popup h2 {
+    font-size: 28px;
+  }
+
+  .popup .subtitle {
+    font-size: 15px;
   }
 
   .popup.show-mobile {
@@ -995,9 +1009,8 @@ footer .stroke-btn:hover {
     width: 100%;
   }
 
-  .callback-popup,
-  .finish-popup {
-    min-height: 430px;
+  .popup .call-img {
+    height: 80px;
   }
 
   .catalog-wrapper {
