@@ -83,7 +83,7 @@
     </div>
 
     <div class="overlay" data-closed></div>
-    <div id="callback_popup" class="popup popup-slide callback-popup" data-type="simple" data-type-animate="slide">
+    <div id="callback_popup" class="popup popup-slide" data-type="simple" data-type-animate="slide">
       <div class="popup-close">
         <svg class="icon-close" data-closed>
           <use xlink:href="icons/icons.svg#iconCross"></use>
@@ -95,17 +95,18 @@
         <form id="callback_form" class="callback-form">
           <div class="input-wrapper">
             <input id="name" type="text" class="user-name stroke-inputs" placeholder="Ваше имя">
+            <span class="validator-error"></span>
           </div>
           <div class="input-wrapper">
             <input id="phone" type="tel" class="phone stroke-inputs" placeholder="+7(000)000-00-00">
+            <span class="validator-error"></span>
           </div>
 
-          <div class="check-column">
-            <button class="btn yellow-btn" type="submit" data-finish-popup="finish-popup">Отправить данные</button>
-            <div class="check-block">
-              <input checked type="checkbox" class="yellow-checkbox" id="checkbox">
-              <label for="checkbox">Даю согласие на обработку данных</label>
-            </div>
+          <button class="btn yellow-btn" type="submit" data-finish-popup="finish-popup">Отправить данные</button>
+          <div class="check-block">
+            <input checked type="checkbox" class="yellow-checkbox" id="checkbox">
+            <label for="checkbox">Даю согласие на обработку данных</label>
+            <span class="validator-error"></span>
           </div>
         </form>
       </div>

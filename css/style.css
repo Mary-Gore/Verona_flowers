@@ -483,6 +483,7 @@ form .stroke-inputs::placeholder {
 form .check-block {
   margin-top: 17px;
   display: flex;
+  flex-direction: column;
   align-items: center;
 }
 
@@ -1002,10 +1003,6 @@ footer .stroke-btn:hover {
   }
 
   .popup .btn {
-    width: 100%;
-  }
-
-  .popup .check-column {
     width: 100%;
   }
 

@@ -52,7 +52,11 @@ class Validator {
         if (elem.type === 'checkbox') {
           if (!elem.checked) {
             return false;
+          } else {
+            return true;
           }
+        } else {
+          console.warn('Убедитесь, что input.type === "checkbox"');
         }
       }
     };
@@ -89,27 +93,17 @@ class Validator {
   showError(elem, message) {
     elem.classList.remove('success');
     elem.classList.add('error');
-    if (elem.nextElementSibling && elem.nextElementSibling.classList.contains('validator-error')) {
-      return;
-    }
 
-    const errorDiv = document.createElement('div');
-    errorDiv.textContent = message;
-    errorDiv.classList.add('validator-error');
-    if (elem.type !== 'checkbox') {
-      elem.insertAdjacentElement('afterend', errorDiv);
-    } else {
-      elem.parentElement.insertAdjacentElement('afterend', errorDiv);
-    }
+    elem.parentElement.querySelector('.validator-error').textContent = message;
+    elem.parentElement.querySelector('.validator-error').style.display = 'block';
+    console.log(' elem.parentElement.querySelector: ', elem.parentElement.querySelector('.validator-error'));
   }
 
   showSuccess(elem) {
     elem.classList.remove('error');
     elem.classList.add('success');
-    if (elem.type !== 'checkbox' && elem.nextElementSibling
-      && elem.nextElementSibling.classList.contains('validator-error')) {
-      elem.nextElementSibling.remove();
-    }
+    console.log(' elem.parentElement.querySelector: ', elem.parentElement.querySelector('.validator-error'));
+    elem.parentElement.querySelector('.validator-error').style.display = 'none';
   }
 
   setPattern() {
