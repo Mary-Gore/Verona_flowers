@@ -1,3 +1,4 @@
+import Validator from "../plugins/validator/Validator";
 const validateForm = () => {
   const valid = new Validator({
     selector: '#callback_form',

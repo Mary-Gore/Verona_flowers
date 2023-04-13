@@ -30,7 +30,7 @@ const getAndRenderProds = () => {
   };
 
   const getProducts = async () => {
-    const res = await fetch('./script/products.json');
+    const res = await fetch('./src/db/products.json');
     const productsArr = await res.json();
     renderProducts(productsArr);
   };
