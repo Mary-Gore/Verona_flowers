@@ -17,6 +17,7 @@
   <script defer src="script/validateIForm.js"></script>
   <script defer src="script/sendForm.js"></script>
   <script defer src="script/animateFinishPopup.js"></script>
+  <script defer src="script/renderProducts.js"></script>
 </head>
 
 <body>
@@ -128,145 +129,7 @@
   <section class="catalog" id="catalog">
     <div class="container">
       <h1>Каталог</h1>
-      <div class="catalog-wrapper">
-        <div class="overlay" data-closed></div>
-        <div data-id="01" class="catalog-item">
-          <div class="img-wrapper">
-            <img src="images/imageCatalog1.jpg" alt="image 1">
-          </div>
-          <div class="wrapper-info">
-            <p class="vendor-code">Артикул: 01312615</p>
-            <span class="price">1500 ₽</span>
-          </div>
-          <div class="btns-wrapper">
-            <button data-cart class="btn pink-btn" data-type="simple">В корзину</button>
-            <div class="counter-wrapper">
-              <button data-action="minus">-</button>
-              <span class="count-num">1</span>
-              <button data-action="plus">+</button>
-            </div>
-          </div>
-        </div>
-        <div data-id="02" class="catalog-item">
-          <div class="img-wrapper">
-            <img src="images/imageCatalog2.jpg" alt="image 2">
-          </div>
-          <div class="wrapper-info">
-            <p class="vendor-code">Артикул: 01312616</p>
-            <span class="price">2000 ₽</span>
-          </div>
-          <div class="btns-wrapper">
-            <button data-cart class="btn pink-btn" data-type="simple">В корзину</button>
-            <div class="counter-wrapper">
-              <button data-action="minus">-</button>
-              <span class="count-num">1</span>
-              <button data-action="plus">+</button>
-            </div>
-          </div>
-        </div>
-        <div data-id="03" class="catalog-item">
-          <div class="img-wrapper">
-            <img src="images/imageCatalog3.jpg" alt="image 3">
-          </div>
-          <div class="wrapper-info">
-            <p class="vendor-code">Артикул: 01312617</p>
-            <span class="price">800 ₽</span>
-          </div>
-          <div class="btns-wrapper">
-            <button data-cart class="btn pink-btn" data-type="simple">В корзину</button>
-            <div class="counter-wrapper">
-              <button data-action="minus">-</button>
-              <span class="count-num">1</span>
-              <button data-action="plus">+</button>
-            </div>
-          </div>
-        </div>
-        <div data-id="04" class="catalog-item last">
-          <div class="img-wrapper">
-            <img src="images/imageCatalog6.jpg" alt="image 4">
-          </div>
-          <div class="wrapper-info">
-            <p class="vendor-code">Артикул: 01412615</p>
-            <span class="price">1000 ₽</span>
-          </div>
-          <div class="btns-wrapper">
-            <button data-cart class="btn pink-btn" data-type="simple">В корзину</button>
-            <div class="counter-wrapper">
-              <button data-action="minus">-</button>
-              <span class="count-num">1</span>
-              <button data-action="plus">+</button>
-            </div>
-          </div>
-        </div>
-        <div data-id="05" class="catalog-item">
-          <div class="img-wrapper">
-            <img src="images/imageCatalog7.jpg" alt="image 5">
-          </div>
-          <div class="wrapper-info">
-            <p class="vendor-code">Артикул: 01412616</p>
-            <span class="price">1200 ₽</span>
-          </div>
-          <div class="btns-wrapper">
-            <button data-cart class="btn pink-btn" data-type="simple">В корзину</button>
-            <div class="counter-wrapper">
-              <button data-action="minus">-</button>
-              <span class="count-num">1</span>
-              <button data-action="plus">+</button>
-            </div>
-          </div>
-        </div>
-        <div data-id="06" class="catalog-item">
-          <div class="img-wrapper">
-            <img src="images/imageCatalog4.jpg" alt="image 6">
-          </div>
-          <div class="wrapper-info">
-            <p class="vendor-code">Артикул: 01412617</p>
-            <span class="price">1500 ₽</span>
-          </div>
-          <div class="btns-wrapper">
-            <button data-cart class="btn pink-btn" data-type="simple">В корзину</button>
-            <div class="counter-wrapper">
-              <button data-action="minus">-</button>
-              <span>1</span>
-              <button data-action="plus">+</button>
-            </div>
-          </div>
-        </div>
-        <div data-id="07" class="catalog-item">
-          <div class="img-wrapper">
-            <img src="images/imageCatalog5.jpg" alt="image 7">
-          </div>
-          <div class="wrapper-info">
-            <p class="vendor-code">Артикул: 01412618</p>
-            <span class="price">2500 ₽</span>
-          </div>
-          <div class="btns-wrapper">
-            <button data-cart class="btn pink-btn" data-type="simple">В корзину</button>
-            <div class="counter-wrapper">
-              <button data-action="minus">-</button>
-              <span class="count-num">1</span>
-              <button data-action="plus">+</button>
-            </div>
-          </div>
-        </div>
-        <div data-id="08" class="catalog-item last">
-          <div class="img-wrapper">
-            <img src="images/imageCatalog8.jpg" alt="image 8">
-          </div>
-          <div class="wrapper-info">
-            <p class="vendor-code">Артикул: 01412617</p>
-            <span class="price">1500 ₽</span>
-          </div>
-          <div class="btns-wrapper">
-            <button data-cart class="btn pink-btn" data-type="simple">В корзину</button>
-            <div class="counter-wrapper">
-              <button data-action="minus">-</button>
-              <span class="count-num">1</span>
-              <button data-action="plus">+</button>
-            </div>
-          </div>
-        </div>
-      </div>
+      <div class="catalog-wrapper"></div>
     </div>
   </section>
 
