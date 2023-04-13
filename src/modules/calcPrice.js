@@ -15,3 +15,4 @@ const calcPrice = () => {
   totalSpan.textContent = totalPrice;
 };
 
+export default calcPrice;

@@ -21,4 +21,4 @@ const eventListeners = () => {
   });
 };
 
-eventListeners();
+export default eventListeners;

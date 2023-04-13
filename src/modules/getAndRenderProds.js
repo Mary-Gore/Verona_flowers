@@ -1,9 +1,11 @@
 
-const catalogWrapper = document.querySelector('.catalog-wrapper');
+const getAndRenderProds = () => {
 
-const renderProducts = arr => {
-  arr.forEach(el => {
-    const productHTML = `
+  const catalogWrapper = document.querySelector('.catalog-wrapper');
+
+  const renderProducts = arr => {
+    arr.forEach(el => {
+      const productHTML = `
        <div data-id="${el.id}" class="catalog-item">
           <div class="img-wrapper">
             <img src="images/${el.imgSrc}" alt="${el['vendor code']}">
@@ -23,14 +25,18 @@ const renderProducts = arr => {
         </div>
     `;
 
-    catalogWrapper.insertAdjacentHTML('beforeend', productHTML);
-  });
+      catalogWrapper.insertAdjacentHTML('beforeend', productHTML);
+    });
+  };
+
+  const getProducts = async () => {
+    const res = await fetch('./script/products.json');
+    const productsArr = await res.json();
+    renderProducts(productsArr);
+  };
+
+  getProducts();
 };
 
-const getProducts = async () => {
-  const res = await fetch('./script/products.json');
-  const productsArr = await res.json();
-  renderProducts(productsArr);
-};
 
-getProducts();
+export default getAndRenderProds;

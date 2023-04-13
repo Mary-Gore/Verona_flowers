@@ -55,5 +55,7 @@ const animateFinishPopup = popup => {
   document.addEventListener('keydown', closeFinishModal);
 };
 
+export default animateFinishPopup;
+
 
 

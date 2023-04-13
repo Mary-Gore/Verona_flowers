@@ -19,4 +19,4 @@ const toggleCartStatus = () => {
   cartCounter.textContent = totalNum;
 };
 
-toggleCartStatus();
+export default toggleCartStatus;

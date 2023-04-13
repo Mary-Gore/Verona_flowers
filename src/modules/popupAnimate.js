@@ -70,4 +70,4 @@ const popupAnimate = () => {
   document.addEventListener('keydown', modalClose);
 };
 
-popupAnimate();
+export default popupAnimate;

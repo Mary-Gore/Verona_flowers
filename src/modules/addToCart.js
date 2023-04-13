@@ -51,4 +51,4 @@ const addToCart = () => {
   });
 };
 
-addToCart();
+export default addToCart;

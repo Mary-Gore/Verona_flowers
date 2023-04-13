@@ -66,5 +66,4 @@ const sendForm = id => {
   });
 };
 
-
-sendForm('callback_form');
+export default sendForm;
