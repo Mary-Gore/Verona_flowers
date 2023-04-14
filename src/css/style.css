@@ -39,6 +39,14 @@ form .btn.disable {
   color: #4A4F57;
 }
 
+.text-st-message {
+  font-size: 16px;
+  text-align: center;
+  display: block;
+  color: #000;
+  margin-top: 20px;
+}
+
 .img-preloader {
   width: 50px;
   height: 50px;

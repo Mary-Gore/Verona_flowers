@@ -1,3 +1,6 @@
+import calcPrice from "./calcPrice";
+import toggleCartStatus from "./toggleCartStatus";
+
 const addToCart = () => {
   const cartWrapper = document.querySelector('.cart-wrapper');
 

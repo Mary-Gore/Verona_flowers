@@ -38,6 +38,14 @@ form .btn.disable {
   color: #4A4F57;
 }
 
+.text-st-message {
+  font-size: 16px;
+  text-align: center;
+  display: block;
+  color: #000;
+  margin-top: 20px;
+}
+
 .img-preloader {
   width: 50px;
   height: 50px;
@@ -78,7 +86,7 @@ form .btn.disable {
 
 .main {
   background: gray;
-  background: url(../images/backgroundImage.jpg) no-repeat;
+  background: url(../ba00e8440d9b72dc514a.jpg) no-repeat;
   background-position: center 10%;
   background-size: cover;
   color: #fff;

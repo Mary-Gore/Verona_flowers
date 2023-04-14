@@ -1,50 +1,52 @@
-[
-  {
-    "id": 1,
-    "vendor code": "01312615",
-    "price": 1500,
-    "imgSrc": "imageCatalog1.jpg"
-  },
-  {
-    "id": 2,
-    "vendor code": "01312616",
-    "price": 2000,
-    "imgSrc": "imageCatalog2.jpg"
-  },
-  {
-    "id": 3,
-    "vendor code": "01312617",
-    "price": 800,
-    "imgSrc": "imageCatalog3.jpg"
-  },
-  {
-    "id": 4,
-    "vendor code": "01412615",
-    "price": 1000,
-    "imgSrc": "imageCatalog4.jpg"
-  },
-  {
-    "id": 5,
-    "vendor code": "01412616",
-    "price": 1200,
-    "imgSrc": "imageCatalog5.jpg"
-  },
-  {
-    "id": 6,
-    "vendor code": "01412617",
-    "price": 1500,
-    "imgSrc": "imageCatalog6.jpg"
-  },
-  {
-    "id": 7,
-    "vendor code": "01412618",
-    "price": 2500,
-    "imgSrc": "imageCatalog7.jpg"
-  },
-  {
-    "id": 8,
-    "vendor code": "01412617",
-    "price": 1500,
-    "imgSrc": "imageCatalog8.jpg"
-  }
-]
+{
+  "products": [
+    {
+      "id": 1,
+      "vendor code": "01312615",
+      "price": 1500,
+      "imgSrc": "imageCatalog1.jpg"
+    },
+    {
+      "id": 2,
+      "vendor code": "01312616",
+      "price": 2000,
+      "imgSrc": "imageCatalog2.jpg"
+    },
+    {
+      "id": 3,
+      "vendor code": "01312617",
+      "price": 800,
+      "imgSrc": "imageCatalog3.jpg"
+    },
+    {
+      "id": 4,
+      "vendor code": "01412615",
+      "price": 1000,
+      "imgSrc": "imageCatalog4.jpg"
+    },
+    {
+      "id": 5,
+      "vendor code": "01412616",
+      "price": 1200,
+      "imgSrc": "imageCatalog5.jpg"
+    },
+    {
+      "id": 6,
+      "vendor code": "01412617",
+      "price": 1500,
+      "imgSrc": "imageCatalog6.jpg"
+    },
+    {
+      "id": 7,
+      "vendor code": "01412618",
+      "price": 2500,
+      "imgSrc": "imageCatalog7.jpg"
+    },
+    {
+      "id": 8,
+      "vendor code": "01412617",
+      "price": 1500,
+      "imgSrc": "imageCatalog8.jpg"
+    }
+  ]
+}

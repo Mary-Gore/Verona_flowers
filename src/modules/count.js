@@ -1,3 +1,6 @@
+import calcPrice from "./calcPrice";
+import toggleCartStatus from "./toggleCartStatus";
+
 const count = () => {
   const cartCounter = document.querySelector('.cart-counter');
 

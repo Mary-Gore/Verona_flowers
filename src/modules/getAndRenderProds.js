@@ -30,7 +30,7 @@ const getAndRenderProds = () => {
   };
 
   const getProducts = async () => {
-    const res = await fetch('./src/db/products.json');
+    const res = await fetch('https://verona-flowers-64472-default-rtdb.europe-west1.firebasedatabase.app/products.json');
     const productsArr = await res.json();
     renderProducts(productsArr);
   };

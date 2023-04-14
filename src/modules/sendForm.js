@@ -1,3 +1,4 @@
+import animateFinishPopup from "./animateFinishPopup";
 const sendForm = id => {
   const form = document.getElementById(id),
     statusMessage = document.createElement('div'),
@@ -15,14 +16,8 @@ const sendForm = id => {
     if (window.innerWidth > 992) {
       statusMessage.innerHTML = `<img class='img-preloader' src='icons/iconSpinnerAnimated.svg'/>`;
     } else {
-      statusMessage.innerHTML = 'Загрузка...';
-      statusMessage.style.cssText = `
-            font-size: 16px;
-            text-align: center;
-            display: block;
-            color: #000;
-            margin-top: 30px;
-      `;
+      statusMessage.classList.add('text-st-message');
+      statusMessage.textContent = 'Загрузка...';
     }
 
     const formData = new FormData(form),
@@ -51,7 +46,7 @@ const sendForm = id => {
 
         if (response.status !== 200) {
           statusMessage.textContent = errorMessage;
-          statusMessage.style.marginTop = '35px';
+          statusMessage.classList.add('text-st-message');
 
           throw new Error('status network is not 200');
         }
