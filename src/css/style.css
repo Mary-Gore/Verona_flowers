@@ -37,6 +37,11 @@ form .btn.disable {
   background-color: #F8F8B1;
   border-color: #F8F8B1;
   color: #4A4F57;
+  cursor: not-allowed;
+}
+
+a, .btn {
+  cursor: pointer;
 }
 
 .text-st-message {
@@ -81,7 +86,6 @@ form .btn.disable {
   border-radius: 5px;
   font-weight: bold;
   font-size: 12px;
-  cursor: pointer;
   font-family: 'Montserrat Alternates', sans-serif;
 }
 
