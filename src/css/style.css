@@ -40,7 +40,8 @@ form .btn.disable {
   cursor: not-allowed;
 }
 
-a, .btn {
+a,
+.btn {
   cursor: pointer;
 }
 
@@ -660,7 +661,7 @@ footer .phone-wrapper {
   align-items: center;
 }
 
-.head-footer nav {
+.head-footer .footer-menu {
   margin-left: 25%;
 }
 
@@ -681,20 +682,17 @@ footer .phone-wrapper {
   font-size: 13px;
 }
 
-.politics {
+.politics  {
   margin-top: 30px;
-}
-
-.politics ul {
   list-style-type: none;
   display: flex;
 }
 
-.politics ul li {
+.politics li {
   line-height: 1.1;
 }
 
-.politics ul li:not(:last-child) {
+.politics li:not(:last-child) {
   margin: 0 30px 12px 0;
 }
 
@@ -777,7 +775,7 @@ footer .stroke-btn:hover {
     justify-content: space-between;
   }
 
-  .head-footer nav {
+  .head-footer .footer-menu {
     margin-left: 0;
   }
 
@@ -1038,7 +1036,7 @@ footer .stroke-btn:hover {
     flex-direction: column;
   }
 
-  .head-footer nav {
+  .head-footer .footer-menu {
     margin-left: 0;
   }
 
@@ -1064,12 +1062,12 @@ footer .stroke-btn:hover {
     margin-left: 0;
   }
 
-  .politics ul {
+  .politics {
     flex-direction: column;
     align-items: center;
   }
 
-  .politics ul li:not(:last-child) {
+  .politics li:not(:last-child) {
     margin: 0 0 10px;
   }
 
